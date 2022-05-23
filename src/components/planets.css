@@ -1,0 +1,32 @@
+.planetContainer {
+    height: 600px;
+    width: 7000px;
+    padding: 2rem 0;
+}
+
+.planet {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 600px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 130px;
+}
+
+.slider {
+    height: 600px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+}
+
+.action {
+    align-self: end;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+}
