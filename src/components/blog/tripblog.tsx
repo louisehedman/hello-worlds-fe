@@ -3,8 +3,8 @@ import './blog.css';
 
 function TripBlog() {
     return (
-      <div className="container p-4">
-        <div className="list card text-white rounded h-100 shadow-lg">
+      <div className="container px-4">
+        <div className="list text-white h-100 shadow-lg">
             <h2>Latest Trips</h2>
 
             <div>

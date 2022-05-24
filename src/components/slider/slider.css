@@ -1,0 +1,123 @@
+.slider {
+    background-color: black;
+    width: 100%;
+    height: 80vh;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid rgb(59, 59, 59);
+    border-radius: 12px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.slide {
+    min-width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: .5s;
+    font-size: 1rem;
+    color: #fff;
+    z-index: 1;
+}
+
+.slideImg {
+    justify-self: center;
+    align-self: center;
+}
+
+.topRight {
+    align-self: flex-end;
+    margin-right: 4rem;
+    padding: 1rem;
+}
+
+.action {
+    border-radius: 8px;
+    border: 1px solid rgb(59, 59, 59);
+    background-color: transparent;
+    color: rgb(240, 240, 240);
+    width: 30px;
+    height: 30px;
+    margin: 0 2px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family:'Courier New', Courier, monospace;
+    transition: .5s;
+}
+
+.add:hover {
+    background-color: rgb(57, 126, 57);
+    border-color: rgb(49, 85, 49);
+    color: black;
+}
+
+.info:hover {
+    background-color: rgb(206, 206, 206);
+    border-color: rgb(63, 63, 63);
+    color: black;
+}
+
+.go {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.0);
+    border: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(185, 185, 185);
+    font-size: 3rem;
+    z-index: 4;
+    transition: .5s;
+}
+
+.go:hover {
+    background-color: rgba(255, 255, 255, 0.034);
+    color: rgb(212, 212, 212);
+}
+
+.right {
+    right: 0;
+}
+
+.left {
+    left: 0;
+}
+
+.slideInfo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    padding: 1rem 0;
+}
+
+.slideInfo h2 {
+    font-size: 2.5rem;
+}
+
+.slideDetails {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+h1 {
+    color: white;
+}
+
+.slideDetails b {
+    color:rgb(158, 158, 158);
+}

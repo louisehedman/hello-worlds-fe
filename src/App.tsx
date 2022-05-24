@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import TripBlog from './components/blog/tripblog';
-import PlanetSlide from './components/planets';
+import Slider from './components/slider/slider';
 
 function App() {
   return (
     <div className="App">
-      <PlanetSlide />
+      <Slider />
       <TripBlog />
     </div>
   );
