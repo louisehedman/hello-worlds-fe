@@ -7,20 +7,14 @@ import './slider.css';
 
 function Slider() {
 
-    let sliderArr: any = [];
-
-    planets.map((planet: any) => {
-        sliderArr.push(planet)
-    })
-
     const [x, setX] = useState(0);
 
     const goLeft = () => {
-        x === 0 ? setX(-100 * (sliderArr.length -1)) : setX(x + 100);
+        x === 0 ? setX(-100 * (planets.length -1)) : setX(x + 100);
     }
     
     const goRight = () => {
-        x === -100 * (sliderArr.length -1) ? setX(0) : setX(x - 100);   
+        x === -100 * (planets.length -1) ? setX(0) : setX(x - 100);   
     }
 
     function numberWithSpaces(nr:number) {
