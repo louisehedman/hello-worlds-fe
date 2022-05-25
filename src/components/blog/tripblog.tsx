@@ -4,7 +4,7 @@ import './blog.css';
 function TripBlog() {
     return (
       <div className="container px-4">
-        <div className="list text-white h-100 shadow-lg">
+        <div className="py-4 bg-white bg-opacity-10 border border-gray rounded text-white h-100 shadow-lg">
             <h2>Latest Trips</h2>
 
             <div>
