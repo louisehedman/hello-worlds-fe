@@ -1,9 +1,5 @@
 import React from "react";
 
-// interface Footer {
-//   text: string;
-// }
-
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-dark text-white pt-5 pb-4 fixed-bottom">
