@@ -2,7 +2,10 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import { planets } from "../helpers/planetArr";
 
-const HeroSlider = () => {
+const HeroSlider = (props: any) => {
+
+    const planets = props.planets;
+    
     return (
         <div className="container px-4 pt-4">
             <h2 className="text-white">Our Planets</h2>
@@ -23,7 +26,9 @@ const HeroSlider = () => {
                      
                         <Carousel.Caption>
                             <h3 >{planet.name}</h3>
-                            <p className="text-white">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <p className="text-white">
+                                <span
+                                className="text-light">Average Temperature: </span>{planet.avgTemp}°C</p>
                         </Carousel.Caption>
                     
                     
