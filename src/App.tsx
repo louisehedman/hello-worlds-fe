@@ -1,23 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import TripBlog from './components/blog/tripblog';
-import Slider from './components/slider/slider';
-import axios from 'axios';
+// import axios from 'axios';
 import HeroSlider from './components/newSlider';
+
+const axios = require('axios');
 
 function App() {
   // const [planets: any, setPlanets] = useState('');
 
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/planets`).then((response) => {
-      console.log(response);
-      
-      // setPlanets(res.data)
-    })
-  }, [])
 
+    try {
+      axios.get(`http://localhost:4000/planets`)
+        .then((response: any) => {
+          console.log(response);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+  })
 
+  
 
   return (
     <div className="App">

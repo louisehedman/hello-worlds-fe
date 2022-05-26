@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Carousel } from "react-bootstrap";
 import { planets } from "../helpers/planetArr";
 
@@ -9,7 +9,7 @@ const HeroSlider = () => {
         <Carousel className="bg-black rounded w-100 mb-4 border border-white">
         {planets.map((planet: any, index: any) => {
             return (
-                <Carousel.Item interval={5000}>
+                <Carousel.Item key={index} interval={5000}>
                     <img
                     src={planet.image}
                     alt={"slide" + index}
