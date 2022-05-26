@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import TripBlog from './components/blog/tripblog';
 // import axios from 'axios';
-import HeroSlider from './components/newSlider';
+import PlanetSlider from './components/slider';
 
 const axios = require('axios');
 
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      {planets && <HeroSlider 
+      {planets && <PlanetSlider 
       planets={planets}/>} 
       <TripBlog />
     </div>
