@@ -4,7 +4,6 @@ import TripBlog from './components/blog/tripblog';
 // import axios from 'axios';
 import PlanetSlider from './components/slider';
 import { Footer } from "./components/Footer";
-import { PlanetPage } from "./components/PlanetPage";
 const axios = require('axios');
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
     
   })
 
-  
 
   return (
     <div className="App">

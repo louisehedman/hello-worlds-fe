@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 interface PlanetInterface {
   _id: string | undefined;
@@ -16,7 +16,6 @@ interface PlanetInterface {
 export const PlanetPage = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
   let { slug } = useParams();
-  console.log(slug);
 
   const getPlanet = async () => {
     await axios.get(`http://localhost:4000/planets/${slug}`).then((res) => {
@@ -39,18 +38,30 @@ export const PlanetPage = () => {
 
   return (
     <div>
-      <div className="container col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h2 className="mb-4 font-weight-bold">{planet?.name}</h2>
-        <p>Add to List</p>
-        <img src={`${planet?.image}`}/>
-        <div className="planet-data">
+      <div className="container px-4 pt-4 bg-dark">
+        <h2 className="text-left text-white">{planet?.name}</h2>
+        <p className="text-white">Add to List</p>
+        <img 
+        src={`${planet?.image}`} 
+        width="20px"
+        style={{
+          width: "auto",
+          height: "40vh"
+        }}
+
+        />
+        <div className="text-center py-4 bg-white bg-opacity-10 border border-gray rounded text-white h-100 shadow-lg">
+         <div className="p-4">
+         <div className="px-4">
           <h3>Temperature</h3>
           <p>{planet?.avgTemp}</p>
           <h3>Distance</h3>
           <p>{planet?.earthDistance}</p>
+          </div>
+          </div>
         </div>
-        <div className="planet-description">
-          <h3>Description</h3>
+        <div className="container px-4 pb-4 text-left py-4 bg-white bg-opacity-10 border border-gray rounded text-white h-100 shadow-lg">
+          <h3 className="text-center">Description</h3>
           <p>{planet?.description}</p>
         </div>
         <div>
