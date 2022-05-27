@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 
-// auth, userId and addPlanet() are temporary 
+// AUTH, USERID AND ADDPLANET() ARE ONLY TEMPORARY 
 
 const PlanetSlider = (props: any) => {
   const planets = props.planets;
@@ -16,14 +16,17 @@ const PlanetSlider = (props: any) => {
     return nr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
 
+  // if user is logged in and there is a user id, att planet to list
   const addPlanet = async (planet: string) => {
-    return axios.patch(`http://localhost:4000/create-trip/${userId}`, {
+    if (auth && userId) {
+      return axios.patch(`http://localhost:4000/create-trip/${userId}`, {
       destination: planet
-    }).then((response) => {
+      }).then((response) => {
       console.log(response);
-    }).catch((error) => {
+      }).catch((error) => {
       console.log(error);
-    })
+      })
+    }
   }
 
   return (
