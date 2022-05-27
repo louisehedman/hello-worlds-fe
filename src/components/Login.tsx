@@ -1,16 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
+import RegisterForm from "./RegisterForm";
+import { UserInfoInterface } from "./RegisterForm";
 
 const Login: React.FC = () => {
   const [hasAccount, setHasAccount] = useState(true);
-  const [state, setState] = useState({
-    firstName: "",
-    username: "",
-    email: "",
-    password: "",
-  });
-
-  const [value, setValue] = useState("");
+  const [state, setState] = useState<UserInfoInterface>({});
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     alert("A name was submitted: " + state);
@@ -26,19 +21,15 @@ const Login: React.FC = () => {
     });
   };
 
-  const handleRegister = async (e: React.SyntheticEvent) => {
+  const handleRegister = async (e: React.SyntheticEvent, url: string) => {
     e.preventDefault();
     try {
-      let res = await axios.post("http://localhost:4000/register", {
-        firstName: state.firstName,
-        username: state.username,
-        email: state.email,
-        password: state.password,
-      });
+      let userInfo = state;
+      let res = await axios.post(url, userInfo);
       if (res.status === 200) {
-        setValue(state.username);
+        console.log(state.username);
       } else {
-        setValue("Some error occured");
+        console.log("Some error occured");
       }
     } catch (err) {
       console.log(err);
@@ -73,44 +64,12 @@ const Login: React.FC = () => {
   else {
     return (
       <div>
-        <form className="w-50 m-auto" onSubmit={handleRegister}>
-          <div className="form-group">
-            <label htmlFor="firstName">First Name:</label>
-            <input
-              className="form-control"
-              type="text"
-              id="firstName"
-              name="firstName"
-              value={state.firstName}
-              onChange={handleChange}
-            />
-            <label>Username:</label>
-            <input
-              className="form-control"
-              type="text"
-              name="username"
-              value={state.username}
-              onChange={handleChange}
-            />
-            <label>Email:</label>
-            <input
-              className="form-control"
-              type="email"
-              name="email"
-              value={state.email}
-              onChange={handleChange}
-            />
-            <label>Password:</label>
-            <input
-              className="form-control"
-              type="password"
-              name="password"
-              value={state.password}
-              onChange={handleChange}
-            />
-            <input type="submit" value="Register" />
-          </div>
-        </form>
+        <RegisterForm
+          handleChange={handleChange}
+          handleRegister={handleRegister}
+          state={state}
+          setState={setState}
+        />
         <p className="d-inline">Already have an account?</p>
         <button
           className="btn btn-link d-inline align-baseline"

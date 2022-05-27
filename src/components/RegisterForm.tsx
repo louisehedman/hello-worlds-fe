@@ -1,20 +1,22 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-interface UserInfoInterface {
+export interface UserInfoInterface {
   firstName?: string;
   username?: string;
-  email: string;
-  password: string;
+  email?: string;
+  password?: string;
 }
 interface PropsInterface {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleRegister: (e: React.SyntheticEvent, url: string) => void;
   state: UserInfoInterface;
   setState: React.Dispatch<React.SetStateAction<UserInfoInterface>>;
 }
 
 const RegisterForm: React.FC<PropsInterface> = ({
   handleChange,
+  handleRegister,
   state,
   setState,
 }) => {
@@ -25,7 +27,10 @@ const RegisterForm: React.FC<PropsInterface> = ({
 
   return (
     <>
-      <form className="w-50 m-auto" onSubmit={handleRegister}>
+      <form
+        className="w-50 m-auto"
+        onSubmit={(e) => handleRegister(e, "http://localhost:4000/register")}
+      >
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
           <input
