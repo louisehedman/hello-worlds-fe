@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { PlanetPage } from './components/PlanetPage';
 
 
 const root = ReactDOM.createRoot(
@@ -17,6 +18,7 @@ root.render(
         {/* <Route path='/user/:id' element={<UserPage />} />
         <Route path='/planet/:slug' element={<PlanetPage />} /> */}
       </Route>
+      <Route path='/planet/:slug' element={<PlanetPage />} />
     </Routes>
   </BrowserRouter>
 );

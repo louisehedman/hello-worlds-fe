@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-interface Props {
-  planet: string;
-  setPlanet: React.Dispatch<React.SetStateAction<PlanetInterface | undefined>>;
-}
+import { useParams } from 'react-router-dom';
 
 interface PlanetInterface {
   _id: string | undefined;
@@ -19,9 +15,11 @@ interface PlanetInterface {
 
 export const PlanetPage = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
+  let { slug } = useParams();
+  console.log(slug);
 
   const getPlanet = async () => {
-    await axios.get(`http://localhost:4000/planets/Mars`).then((res) => {
+    await axios.get(`http://localhost:4000/planets/${slug}`).then((res) => {
       setPlanet({
         _id: res.data.planet._id,
         name: res.data.planet.name,
@@ -52,7 +50,7 @@ export const PlanetPage = () => {
           <p>{planet?.earthDistance}</p>
         </div>
         <div className="planet-description">
-          <h3>Data</h3>
+          <h3>Description</h3>
           <p>{planet?.description}</p>
         </div>
         <div>

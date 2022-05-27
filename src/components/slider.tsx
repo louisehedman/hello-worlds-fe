@@ -51,7 +51,7 @@ const PlanetSlider = (props: any) => {
                 <h3>{planet.name}</h3>
                 <div className="d-flex justify-content-center">
                     {auth && <button onClick={() => addPlanet(planet.name)} className="p-1 mx-1 my-3 btn btn-outline-success">add +</button>}
-                     <Link to={"/planet/" + planet.name.toLowerCase()}><button className="p-1 mx-1 my-3 btn btn-outline-light">read more</button></Link>
+                     <Link to={"/planet/" + planet.name/* .toLowerCase() */}><button className="p-1 mx-1 my-3 btn btn-outline-light">read more</button></Link>
                 </div>
                 <p className="text-white">
                 <span className="text-muted">Average Temperature: </span>
