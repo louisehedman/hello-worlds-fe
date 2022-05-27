@@ -1,11 +1,12 @@
 import React from "react";
-import logo from "./logo.svg";
 import { Footer } from "./components/Footer";
 import "./App.css";
+import Login from "./components/Login";
 
 function App() {
   return (
     <div className="App">
+      <Login />
       <Footer />
     </div>
   );
