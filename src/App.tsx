@@ -24,7 +24,6 @@ function App() {
 
   return (
     <div className="App">
-      <Login />
       {planets && <PlanetSlider planets={planets} />}
       <TripBlog />
       <Footer />
