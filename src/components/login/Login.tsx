@@ -8,6 +8,16 @@ const Login: React.FC = () => {
   const [hasAccount, setHasAccount] = useState(true);
   const [state, setState] = useState<UserInfoInterface>({});
 
+  const logout = async () => {
+    await fetch("http://localhost:4000/logout", {
+      method: "POST",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setState({
@@ -40,7 +50,8 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="container w-50 text-center">
+      <button onClick={logout}>Logout</button>
       {hasAccount ? (
         <LoginForm
           handleSubmit={handleSubmit}

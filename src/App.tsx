@@ -2,22 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 import { Footer } from "./components/Footer";
-import Login from "./components/Login";
+import Login from "./components/login/Login";
 import TripBlog from "./components/blog/tripblog";
 import PlanetSlider from "./components/slider";
 
 function App() {
   const [planets, setPlanets] = useState(null);
-
-  const logout = async () => {
-    await fetch("http://localhost:4000/logout", {
-      method: "POST",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-  };
 
   useEffect(() => {
     if (!planets) {
@@ -34,7 +24,6 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={logout}>Logout</button>
       <Login />
       {planets && <PlanetSlider planets={planets} />}
       <TripBlog />
