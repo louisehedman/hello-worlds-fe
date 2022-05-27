@@ -25,14 +25,13 @@ export const PlanetPage = () => {
       setPlanet({
         _id: res.data.planet._id,
         name: res.data.planet.name,
-        moons: res.data.planet.name,
+        moons: res.data.planet.moons,
         avgTemp: res.data.planet.avgTemp,
         earthDistance: res.data.planet.earthDistance,
         shortDescription: res.data.planet.shortDescription,
         description: res.data.planet.description,
-        image: res.data.planet.description.image,
+        image: res.data.planet.image,
       });
-      console.log(res.data.planet.image);
     });
   };
 
@@ -45,19 +44,16 @@ export const PlanetPage = () => {
       <div className="container col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h2 className="mb-4 font-weight-bold">{planet?.name}</h2>
         <p>Add to List</p>
-        <img src={planet?.image}/>
+        <img src={`${planet?.image}`}/>
         <div className="planet-data">
-            <h3>Temperature</h3>
-            <p>{planet?.avgTemp}</p>
-            <h3>Distance</h3>
-            <p>{planet?.earthDistance}</p>
-          
+          <h3>Temperature</h3>
+          <p>{planet?.avgTemp}</p>
+          <h3>Distance</h3>
+          <p>{planet?.earthDistance}</p>
         </div>
         <div className="planet-description">
           <h3>Data</h3>
-          <p>
-           {planet?.description}
-          </p>
+          <p>{planet?.description}</p>
         </div>
         <div>
           <p></p>
