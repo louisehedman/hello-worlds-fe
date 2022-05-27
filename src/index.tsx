@@ -15,7 +15,7 @@ root.render(
     <Routes>
       <Route path='/' element={<App />}>
         {/* <Route path='/user/:id' element={<UserPage />} />
-        <Route path='/planet/:id' element={<PlanetPage />} /> */}
+        <Route path='/planet/:slug' element={<PlanetPage />} /> */}
       </Route>
     </Routes>
   </BrowserRouter>
