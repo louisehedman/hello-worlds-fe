@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import { planets } from "../helpers/planetArr";
 import './slider.css';
@@ -6,6 +6,7 @@ import './slider.css';
 
 const PlanetSlider = (props: any) => {
   const planets = props.planets;
+  const auth = 1;
 
   function numberWithSpaces(nr: number) {
     return nr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -32,7 +33,7 @@ const PlanetSlider = (props: any) => {
             <Carousel.Caption>
                 <h3>{planet.name}</h3>
                 <div className="d-flex justify-content-center">
-                    <button className="p-1 mx-1 my-3 btn btn-outline-success">add +</button>
+                    {auth && <button className="p-1 mx-1 my-3 btn btn-outline-success">add +</button>}
                     <button className="p-1 mx-1 my-3 btn btn-outline-light">read more</button>
                 </div>
                 <p className="text-white">
