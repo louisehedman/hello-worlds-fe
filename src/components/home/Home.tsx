@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import PlanetSlider from "../src/components/home/Slider";
+import PlanetSlider from "./Slider";
 
-import TripBlog from "./tripblog";
+import TripBlog from "./Tripblog";
 
 const Home: React.FC = () => {
   const [planets, setPlanets] = useState(null);
