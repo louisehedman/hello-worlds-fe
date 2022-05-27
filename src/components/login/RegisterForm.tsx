@@ -57,7 +57,7 @@ const RegisterForm: React.FC<PropsInterface> = ({
             value={state.password}
             onChange={handleChange}
           />
-          <input type="submit" value="Register" />
+          <input className="btn btn-light" type="submit" value="Register" />
         </div>
       </form>
     </>

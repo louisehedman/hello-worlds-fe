@@ -50,7 +50,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="container w-50 text-center">
+    <div className="container w-50 text-center text-white">
       <button onClick={logout}>Logout</button>
       {hasAccount ? (
         <LoginForm

@@ -28,7 +28,7 @@ const LoginForm: React.FC<PropsInterface> = ({
             value={state.password}
             onChange={handleChange}
           />
-          <input className="btn" type="submit" value="Login" />
+          <input className="btn btn-light" type="submit" value="Login" />
         </div>
       </form>
     </>
