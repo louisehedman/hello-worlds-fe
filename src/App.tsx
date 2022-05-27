@@ -3,8 +3,8 @@ import './App.css';
 import TripBlog from './components/blog/tripblog';
 // import axios from 'axios';
 import PlanetSlider from './components/slider';
-
 const axios = require('axios');
+import { Footer } from "./components/Footer";
 
 function App() {
   const [planets, setPlanets] = useState(null);
@@ -32,6 +32,7 @@ function App() {
       {planets && <PlanetSlider 
       planets={planets}/>} 
       <TripBlog />
+      <Footer />
     </div>
   );
 }
