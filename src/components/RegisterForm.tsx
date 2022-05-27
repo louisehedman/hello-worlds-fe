@@ -1,12 +1,17 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const RegisterForm: React.FC = () => {
+interface PropsInterface {
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+const RegisterForm: React.FC<PropsInterface> = ({ handleChange }) => {
+  const [value, setValue] = useState("");
   // State
   // Value
 
   //Parent state
   //
+
   return (
     <>
       <form className="w-50 m-auto" onSubmit={handleRegister}>
