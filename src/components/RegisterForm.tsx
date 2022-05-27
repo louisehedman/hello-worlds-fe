@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 
 export interface UserInfoInterface {
@@ -7,29 +6,22 @@ export interface UserInfoInterface {
   email?: string;
   password?: string;
 }
-interface PropsInterface {
+export interface PropsInterface {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleRegister: (e: React.SyntheticEvent, url: string) => void;
+  handleSubmit: (e: React.SyntheticEvent, url: string) => void;
   state: UserInfoInterface;
-  setState: React.Dispatch<React.SetStateAction<UserInfoInterface>>;
 }
 
 const RegisterForm: React.FC<PropsInterface> = ({
   handleChange,
-  handleRegister,
+  handleSubmit,
   state,
-  setState,
 }) => {
-  const [value, setValue] = useState("");
-
-  //Parent state
-  //
-
   return (
     <>
       <form
         className="w-50 m-auto"
-        onSubmit={(e) => handleRegister(e, "http://localhost:4000/register")}
+        onSubmit={(e) => handleSubmit(e, "http://localhost:4000/register")}
       >
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
