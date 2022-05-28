@@ -1,11 +1,7 @@
 import React from "react";
 import './Header.css';
 
-interface Header {
-    text: string;
-}
-
-export const Header: React.FC<Header> = () => {
+export const Header: React.FC = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top m-0" style={{ opacity: 0.9 }}>
             <div className="container-fluid">
