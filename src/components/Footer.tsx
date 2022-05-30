@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom"
+
 
 export const Footer: React.FC = () => {
   return (
@@ -19,7 +21,7 @@ export const Footer: React.FC = () => {
           <div className="col-md-2 col-lg-2 col-lx-2 mx-auto mt-3">
             <h5 className="text-uppercase mb-4 font-weight-bold text-warning">About</h5>
             <p>
-              <a href="#" className="text-uppercase text-white" style={{ textDecoration: 'none' }}>About us</a>
+              <Link to="/about" className="text-uppercase text-white" style={{ textDecoration: 'none' }}>About us</Link>
             </p>
             <p>
               <a href="#" className="text-uppercase text-white" style={{ textDecoration: 'none' }}>Contact</a>

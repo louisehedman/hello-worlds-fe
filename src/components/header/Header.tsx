@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom"
 
 export const Header: React.FC = () => {
   return (
@@ -25,13 +26,13 @@ export const Header: React.FC = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link active"
-                href="#"
+                to="/"
                 style={{ color: "white" }}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#" style={{ color: "white" }}>
@@ -44,9 +45,9 @@ export const Header: React.FC = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "white" }}>
+              <Link className="nav-link" to="/about" style={{ color: "white" }}>
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <a
