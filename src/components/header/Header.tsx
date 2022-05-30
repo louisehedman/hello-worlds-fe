@@ -2,6 +2,8 @@ import React from "react";
 import "./Header.css";
 
 export const Header: React.FC = () => {
+  const userId = localStorage.getItem("userId");
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark bg-dark relative-top m-0"
@@ -51,7 +53,7 @@ export const Header: React.FC = () => {
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="#"
+                href={userId ? `/user/${userId}` : "/"}
                 style={{ color: "white" }}
                 id="navbarDropdown"
                 role="button"
@@ -72,7 +74,7 @@ export const Header: React.FC = () => {
                 <li>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href={userId ? `/user/${userId}` : "/"}
                     style={{ color: "white" }}
                   >
                     My profile
