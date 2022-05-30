@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { API_URL, GET_PLANET } from "../reusable/urls";
 import { TripInterface, PlanetInterface } from '../interfaces/interfaces'
+import { Link } from 'react-router-dom';
 
 interface Props {
   trip: TripInterface;
@@ -40,11 +41,16 @@ const Trip: React.FC<Props> = ({ trip }) => {
   }, [])
 
   return (
-    <div>
-      <p>{planet?.name}</p>
-      <p>{trip.departure}</p>
-      <p>{trip.firstClass ? "First class" : "Economy"}</p>
+    <Link to={`/booked-trip/${trip?._id}`}>
+    <div className="card rounded m-4" style={{width: "18rem;", backgroundColor: "rgba(255, 255, 255, 0.65)"}}>
+      <img src={planet?.image} className="card-img-top rounded" alt={planet?.name} style={{width: "16rem"}}/>
+      <div className="card-body">
+        <h5 className="card-title text-dark">{planet?.name}</h5>
+        <p className="card-text text-dark d-inline">{trip.departure}</p>
+        <p className="class-text text-dark d-inline" style={{marginLeft: "auto"}}>{trip.firstClass ? "First class" : "Economy"}</p>
+      </div>
     </div>
+    </Link>
   )
 }
 
