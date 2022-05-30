@@ -14,9 +14,11 @@ const TripList: React.FC<Props> = ({ tripList }) => {
   return (
     <section>
       <h2>Your bookings</h2>
-      {tripList?.map((trip: TripInterface) => (
-        <Trip trip={trip} />
-      ))}
+      <div className="d-flex">
+        {tripList?.map((trip: TripInterface) => (
+          <Trip trip={trip} />
+        ))}
+      </div>
     </section>
 );
 }
