@@ -1,11 +1,11 @@
 import React from "react";
 import './Footer.css';
 
-interface Footer {
-  text: string;
+interface FooterInterface {
+  text?: string;
 }
 
-export const Footer: React.FC<Footer> = () => {
+const Footer: React.FC<FooterInterface> = () => {
   return (
     <footer className="bg-dark text-white pt-5 pb-4">
       <div className="container text-center text-md-left">
@@ -119,3 +119,5 @@ export const Footer: React.FC<Footer> = () => {
     </footer>
   );
 };
+
+export default Footer;
