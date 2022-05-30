@@ -22,15 +22,16 @@ const User: React.FC = () => {
           isAdmin: data.user.isAdmin,
           tripList: data.user.tripList,
         });
+
+        localStorage.setItem("userId", data.user._id);
       });
   }, []);
   return (
-    <main>
+    <main className="d-flex flex-column align-items-center text-white">
       <section>
-        <p>{user?.firstName}</p>
+        <h1>{user?.firstName}</h1>
       </section>
       <TripList tripList={user?.tripList}/>
-      
     </main>
   );
 };
