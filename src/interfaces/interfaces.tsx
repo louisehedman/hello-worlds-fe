@@ -3,7 +3,10 @@ export interface PlanetInterface {
   name: string | undefined;
   moons: Array<object> | undefined;
   avgTemp: number | undefined;
-  mass: object | undefined;
+  mass: {
+    massValue: number | undefined;
+    massExponent: number | undefined;
+  };
   grav: number | undefined;
   radius: number | undefined;
   earthDistance: number | undefined;
