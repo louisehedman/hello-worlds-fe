@@ -30,7 +30,9 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       let userInfo = state;
-      let res = await axios.post(url, userInfo);
+      console.log("userinfo: ", userInfo);
+      let res = await axios.post(url, userInfo, {method: 'POST', headers: {'Content-Type': 'application/json'}, withCredentials: true});
+      console.log("res: ", res);
       if (res.status === 200) {
         console.log(res);
       } else {
