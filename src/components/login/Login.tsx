@@ -1,15 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { UserDetailsInterface } from "../../interfaces/interfaces";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
-import { UserInfoInterface } from "./RegisterForm";
+import { API_URL } from "../../reusable/urls";
 
 const Login: React.FC = () => {
   const [hasAccount, setHasAccount] = useState(true);
-  const [state, setState] = useState<UserInfoInterface>({});
+  const [state, setState] = useState<UserDetailsInterface>({});
 
   const logout = async () => {
-    await fetch("http://localhost:4000/logout", {
+    await fetch(API_URL("logout"), {
       method: "POST",
     })
       .then((res) => res.json())
