@@ -9,13 +9,19 @@ const Login: React.FC = () => {
   const [state, setState] = useState<UserInfoInterface>({});
 
   const logout = async () => {
-    await fetch("http://localhost:4000/logout", {
-      method: "POST",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    try {
+    let res = await axios.post("http://localhost:4000/logout", {"body": "empty"}, {
+      method: "POST", headers: {'Content-Type': 'application/json'}, withCredentials: true 
+    });
+    console.log("res: ", res);
+    if (res.status === 200) {
+      console.log(res);
+    } else {
+      console.log("Some error occured");
+    }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
