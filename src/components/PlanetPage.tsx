@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { createUnparsedSourceFile } from "typescript";
+import { PlanetInterface } from '../interfaces/interfaces';
 
-interface PlanetInterface {
-  _id: string | undefined;
-  name: string | undefined;
-  moons: Array<{ id: number; moon: string }> | undefined;
-  avgTemp: number | undefined;
-  earthDistance: number | undefined;
-  shortDescription: string | undefined;
-  description: string | undefined;
-  image: string | undefined;
-}
 
 export const PlanetPage = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
@@ -27,7 +19,10 @@ export const PlanetPage = () => {
         earthDistance: res.data.planet.earthDistance,
         shortDescription: res.data.planet.shortDescription,
         description: res.data.planet.description,
-        image: res.data.planet.image,
+        image: res.data.planet.image, 
+        mass: res.data.planet.mass,
+        grav: res.data.planet.grav,
+        radius: res.data.planet.radius,
       });
     });
   };

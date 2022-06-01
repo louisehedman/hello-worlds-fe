@@ -10,6 +10,7 @@ export interface PlanetInterface {
   grav: number | undefined;
   radius: number | undefined;
   earthDistance: number | undefined;
+  description: string | undefined;
   shortDescription: string | undefined;
   image: string | undefined;
 }
