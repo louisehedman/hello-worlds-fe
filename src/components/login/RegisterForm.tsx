@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { UserDetailsInterface } from "../../interfaces/interfaces";
 import { API_URL } from "../../reusable/urls";
-
-export interface UserInfoInterface {
-  firstName?: string;
-  username?: string;
-  email?: string;
-  password?: string;
-}
 export interface PropsInterface {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.SyntheticEvent, url: string) => void;
-  state: UserInfoInterface;
+  state: UserDetailsInterface;
 }
 
 const RegisterForm: React.FC<PropsInterface> = ({

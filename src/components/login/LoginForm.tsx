@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 import { PropsInterface } from "./RegisterForm";
 import { API_URL } from "../../reusable/urls";
