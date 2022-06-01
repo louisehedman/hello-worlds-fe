@@ -11,6 +11,7 @@ import Home from "./components/home/Home";
 import About from "./components/about/About";
 import User from "./pages/User";
 import BookedTrip from "./pages/BookedTrip";
+import BlogPage from "./pages/blogpage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -26,6 +27,7 @@ root.render(
         <Route path="/" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="about" element={<About />}></Route>
+        <Route path="blogs/:id" element={<BlogPage />}></Route>
       </Route>
     </Routes>
   </BrowserRouter>
