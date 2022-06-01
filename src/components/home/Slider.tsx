@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "./Slider.css";
 import { Link } from "react-router-dom"
@@ -6,10 +6,25 @@ import axios from "axios";
 
 // AUTH, USERID AND ADDPLANET() ARE ONLY TEMPORARY
 
-const PlanetSlider = (props: any) => {
-  const planets = props.planets;
+const PlanetSlider = () => {
+  const [planets, setPlanets] = useState([])
   const auth = 1;
   const userId = 1;
+
+  useEffect(() => {    
+    if (planets.length === 0) {
+      try {
+        axios.get(`http://localhost:4000/planets`).then((response: any) => {
+          // console.log(response);
+          setPlanets(response.data.planets);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  })
+
+
 
   function numberWithSpaces(nr: number) {
     return nr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -87,3 +102,4 @@ const PlanetSlider = (props: any) => {
 };
 
 export default PlanetSlider;
+
