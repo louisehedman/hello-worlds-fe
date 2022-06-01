@@ -10,13 +10,18 @@ const Login: React.FC = () => {
   const [state, setState] = useState<UserDetailsInterface>({});
 
   const logout = async () => {
-    await fetch(API_URL("logout"), {
-      method: "POST",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    try {
+    let res = await axios.post(API_URL("logout"), {"body": "empty"}, {
+      method: "POST", headers: {'Content-Type': 'application/json'}, withCredentials: true 
+    });
+    if (res.status === 200) {
+      console.log(res);
+    } else {
+      console.log("Some error occured");
+    }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +36,8 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       let userInfo = state;
-      let res = await axios.post(url, userInfo);
+      let res = await axios.post(url, userInfo, {method: 'POST', headers: {'Content-Type': 'application/json'}, withCredentials: true});
+      console.log("res: ", res);
       if (res.status === 200) {
         console.log(res);
       } else {

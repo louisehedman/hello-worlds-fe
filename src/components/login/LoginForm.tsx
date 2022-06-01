@@ -14,6 +14,7 @@ const LoginForm: React.FC<Props> = ({ handleSubmit, handleChange, state }) => {
           <input
             className="form-control"
             type="email"
+            name="email"
             value={state.email}
             onChange={handleChange}
           />
@@ -21,6 +22,7 @@ const LoginForm: React.FC<Props> = ({ handleSubmit, handleChange, state }) => {
           <input
             className="form-control"
             type="password"
+            name="password"
             value={state.password}
             onChange={handleChange}
           />
