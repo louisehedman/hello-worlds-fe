@@ -12,7 +12,7 @@ export interface PlanetInterface {
   earthDistance: number | undefined;
   shortDescription: string | undefined;
   image: string | undefined;
-};
+}
 
 export interface TripInterface {
   _id: string | undefined;
@@ -22,7 +22,7 @@ export interface TripInterface {
   firstClass: boolean | undefined;
   createdAt: string | undefined;
   planet?: PlanetInterface | undefined;
-};
+}
 
 export interface UserInterface {
   _id: string | undefined;
@@ -31,4 +31,11 @@ export interface UserInterface {
   email: string | undefined;
   isAdmin: boolean | undefined;
   tripList: Array<TripInterface> | undefined;
-};
+}
+
+export interface UserDetailsInterface {
+  firstName?: string;
+  username?: string;
+  email?: string;
+  password?: string;
+}

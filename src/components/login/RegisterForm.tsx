@@ -1,18 +1,13 @@
-import React, { useState } from "react";
-
-export interface UserInfoInterface {
-  firstName?: string;
-  username?: string;
-  email?: string;
-  password?: string;
-}
-export interface PropsInterface {
+import React from "react";
+import { UserDetailsInterface } from "../../interfaces/interfaces";
+import { API_URL } from "../../reusable/urls";
+export interface Props {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.SyntheticEvent, url: string) => void;
-  state: UserInfoInterface;
+  state: UserDetailsInterface;
 }
 
-const RegisterForm: React.FC<PropsInterface> = ({
+const RegisterForm: React.FC<Props> = ({
   handleChange,
   handleSubmit,
   state,
@@ -21,7 +16,7 @@ const RegisterForm: React.FC<PropsInterface> = ({
     <>
       <form
         className="w-50 m-auto"
-        onSubmit={(e) => handleSubmit(e, "http://localhost:4000/register")}
+        onSubmit={(e) => handleSubmit(e, API_URL("register"))}
       >
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
