@@ -14,7 +14,6 @@ const Login: React.FC = () => {
     let res = await axios.post(API_URL("logout"), {"body": "empty"}, {
       method: "POST", headers: {'Content-Type': 'application/json'}, withCredentials: true 
     });
-    console.log("res: ", res);
     if (res.status === 200) {
       console.log(res);
     } else {
@@ -37,7 +36,6 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       let userInfo = state;
-      console.log("userinfo: ", userInfo);
       let res = await axios.post(url, userInfo, {method: 'POST', headers: {'Content-Type': 'application/json'}, withCredentials: true});
       console.log("res: ", res);
       if (res.status === 200) {
