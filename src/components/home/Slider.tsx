@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./Slider.css";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import axios from "axios";
 
 // AUTH, USERID AND ADDPLANET() ARE ONLY TEMPORARY
