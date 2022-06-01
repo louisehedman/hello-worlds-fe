@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_URL } from "../../reusable/urls";
 
 export interface UserInfoInterface {
   firstName?: string;
@@ -21,7 +22,7 @@ const RegisterForm: React.FC<PropsInterface> = ({
     <>
       <form
         className="w-50 m-auto"
-        onSubmit={(e) => handleSubmit(e, "http://localhost:4000/register")}
+        onSubmit={(e) => handleSubmit(e, API_URL("register"))}
       >
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>

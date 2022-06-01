@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { PropsInterface } from "./RegisterForm";
+import { API_URL } from "../../reusable/urls";
 
 const LoginForm: React.FC<PropsInterface> = ({
   handleSubmit,
@@ -11,7 +12,7 @@ const LoginForm: React.FC<PropsInterface> = ({
     <>
       <form
         className="w-50 m-auto"
-        onSubmit={(e) => handleSubmit(e, "http://localhost:4000/login")}
+        onSubmit={(e) => handleSubmit(e, API_URL("login"))}
       >
         <div className="form-group">
           <label>Email:</label>
