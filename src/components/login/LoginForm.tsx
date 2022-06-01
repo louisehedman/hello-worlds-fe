@@ -1,12 +1,8 @@
 import React from "react";
-import { PropsInterface } from "./RegisterForm";
+import { Props } from "./RegisterForm";
 import { API_URL } from "../../reusable/urls";
 
-const LoginForm: React.FC<PropsInterface> = ({
-  handleSubmit,
-  handleChange,
-  state,
-}) => {
+const LoginForm: React.FC<Props> = ({ handleSubmit, handleChange, state }) => {
   return (
     <>
       <form

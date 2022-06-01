@@ -1,13 +1,13 @@
 import React from "react";
 import { UserDetailsInterface } from "../../interfaces/interfaces";
 import { API_URL } from "../../reusable/urls";
-export interface PropsInterface {
+export interface Props {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.SyntheticEvent, url: string) => void;
   state: UserDetailsInterface;
 }
 
-const RegisterForm: React.FC<PropsInterface> = ({
+const RegisterForm: React.FC<Props> = ({
   handleChange,
   handleSubmit,
   state,
