@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { createUnparsedSourceFile } from "typescript";
 import { PlanetInterface } from '../interfaces/interfaces';
-
+import { API_URL } from "../reusable/urls";
 
 export const PlanetPage = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
