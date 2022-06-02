@@ -16,7 +16,7 @@ export interface PlanetInterface {
 }
 
 export interface TripInterface {
-  _id: string | undefined;
+  _id?: string | undefined;
   destination: string | undefined;
   travTime: number | undefined;
   departure: string | undefined;
