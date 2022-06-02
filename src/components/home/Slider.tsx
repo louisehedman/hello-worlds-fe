@@ -27,6 +27,7 @@ const PlanetSlider = () => {
     return nr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
 
+  
   return (
     <div className="container px-4 pt-4">
       <h2 className="text-center text-white">Our Planets</h2>
