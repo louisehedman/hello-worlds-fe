@@ -30,20 +30,20 @@ const PlanetSlider = () => {
   }
 
   // if user is logged in and there is a user id, add planet to list
-  const addPlanet = async (planet: string) => {
-    if (auth && userId) {
-      return axios
-        .patch(API_URL(`create-trip/${userId}`), {
-          destination: planet,
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  };
+  // const addPlanet = async (planet: string) => {
+  //   if (auth && userId) {
+  //     return axios
+  //       .patch(API_URL(`create-trip/${userId}`), {
+  //         destination: planet,
+  //       })
+  //       .then((response) => {
+  //         console.log(response);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   }
+  // };
 
   return (
     <div className="container px-4 pt-4">
@@ -69,14 +69,14 @@ const PlanetSlider = () => {
               <Carousel.Caption>
                 <h3>{planet.name}</h3>
                 <div className="d-flex justify-content-center">
-                  {auth && (
+                  {/* {auth && (
                     <button
                       onClick={() => addPlanet(planet.name)}
                       className="p-1 mx-1 my-3 btn btn-outline-success"
                     >
                       add +
                     </button>
-                  )}
+                  )} */}
                   <Link to={"/planet/" + planet.name}>
                     <button className="p-1 mx-1 my-3 btn btn-outline-light">
                       read more

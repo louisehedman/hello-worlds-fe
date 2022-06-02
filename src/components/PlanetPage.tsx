@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { createUnparsedSourceFile } from "typescript";
-import { PlanetInterface } from '../interfaces/interfaces';
+import { PlanetInterface } from "../interfaces/interfaces";
 import { API_URL } from "../reusable/urls";
-
+import SuperAwesomeButton from "./SuperAwesomeButton";
 
 export const PlanetPage = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
@@ -20,7 +19,7 @@ export const PlanetPage = () => {
         earthDistance: res.data.planet.earthDistance,
         shortDescription: res.data.planet.shortDescription,
         description: res.data.planet.description,
-        image: res.data.planet.image, 
+        image: res.data.planet.image,
         mass: res.data.planet.mass,
         grav: res.data.planet.grav,
         radius: res.data.planet.radius,
@@ -35,25 +34,31 @@ export const PlanetPage = () => {
   return (
     <div>
       <div className="container px-4 pt-4 bg-dark">
-        <h2 className="text-left text-white">{planet?.name}</h2>
-        <p className="text-white">Add to List</p>
-        <img 
-        src={`${planet?.image}`} 
-        width="20px"
-        style={{
-          width: "auto",
-          height: "40vh"
-        }}
-
+        <div className="d-flex align-items-baseline justify-content-around">
+          <h2 className="text-left text-white d-inline">{planet?.name}</h2>
+          <SuperAwesomeButton
+            destination={planet?._id}
+            distanceToEarth={planet?.earthDistance}
+            planetName={planet?.name}
+          />
+        </div>
+        <img
+          className="mx-auto d-block"
+          src={`${planet?.image}`}
+          width="20px"
+          style={{
+            width: "auto",
+            height: "40vh",
+          }}
         />
         <div className="text-center py-4 bg-white bg-opacity-10 border border-gray rounded text-white h-100 shadow-lg">
-         <div className="p-4">
-         <div className="px-4">
-          <h3>Temperature</h3>
-          <p>{planet?.avgTemp}</p>
-          <h3>Distance</h3>
-          <p>{planet?.earthDistance}</p>
-          </div>
+          <div className="p-4">
+            <div className="px-4">
+              <h3>Temperature</h3>
+              <p>{planet?.avgTemp}</p>
+              <h3>Distance</h3>
+              <p>{planet?.earthDistance}</p>
+            </div>
           </div>
         </div>
         <div className="container px-4 pb-4 text-left py-4 bg-white bg-opacity-10 border border-gray rounded text-white h-100 shadow-lg">
