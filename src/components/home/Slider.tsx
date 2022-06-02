@@ -13,16 +13,17 @@ const PlanetSlider = () => {
   const userId = 1;
 
   useEffect(() => {
-    if (planets.length === 0) {
+    const fetchPlanets = async () => {
       try {
-        axios.get(API_URL("planets")).then((response: any) => {
+        await axios.get(API_URL("planets")).then((response: any) => {
           setPlanets(response.data.planets);
         });
       } catch (error) {
         console.log(error);
       }
     }
-  });
+    fetchPlanets();
+  }, []);
 
   function numberWithSpaces(nr: number) {
     return nr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");

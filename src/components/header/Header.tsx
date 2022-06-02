@@ -11,9 +11,9 @@ export const Header: React.FC = () => {
       style={{ opacity: 0.9 }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img src="/logo001.png" alt="" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"

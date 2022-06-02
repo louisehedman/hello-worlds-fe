@@ -13,17 +13,17 @@ function BlogPage() {
   });  
 
   useEffect(() => {
-    
-    if (blog.author === "") {
+    const fetchBlog = async () => {
       try {
-        axios.get(API_URL(`blogs/${blogId.id}`)).then((response: any) => {
+        await axios.get(API_URL(`blogs/${blogId.id}`)).then((response: any) => {
           setBlog(response.data.blog);
         });
       } catch (error) {
         console.log(error);
       }
     }
-  });
+    fetchBlog();
+  }, []);
 
   return (
     <>
