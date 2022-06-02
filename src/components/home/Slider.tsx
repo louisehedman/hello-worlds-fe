@@ -1,40 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "./Slider.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../../reusable/urls";
 
 // AUTH, USERID AND ADDPLANET() ARE ONLY TEMPORARY
 
 const PlanetSlider = () => {
-  const [planets, setPlanets] = useState([])
+  const [planets, setPlanets] = useState([]);
   const auth = 1;
   const userId = 1;
 
-  useEffect(() => {    
+  useEffect(() => {
     if (planets.length === 0) {
       try {
-        axios.get(`http://localhost:4000/planets`).then((response: any) => {
-          // console.log(response);
+        axios.get(API_URL("planets")).then((response: any) => {
           setPlanets(response.data.planets);
         });
       } catch (error) {
         console.log(error);
       }
     }
-  })
-
-
+  });
 
   function numberWithSpaces(nr: number) {
     return nr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
 
-  // if user is logged in and there is a user id, att planet to list
+  // if user is logged in and there is a user id, add planet to list
   const addPlanet = async (planet: string) => {
     if (auth && userId) {
       return axios
-        .patch(`http://localhost:4000/create-trip/${userId}`, {
+        .patch(API_URL(`create-trip/${userId}`), {
           destination: planet,
         })
         .then((response) => {
@@ -102,4 +100,3 @@ const PlanetSlider = () => {
 };
 
 export default PlanetSlider;
-
