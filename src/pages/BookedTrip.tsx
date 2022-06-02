@@ -14,25 +14,30 @@ const BookedTrip: React.FC = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
 
   useEffect(() => {
-    axios
-      .get(
-        API_URL(GET_TRIP(userId ? userId : "628b720f3496e31190e38a35", tripId))
-      )
-      .then((res) => {
-        const data = res.data;
+    fetch(API_URL(GET_TRIP(userId !== null ? JSON.parse(userId) : null, tripId)), {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }, 
+      credentials: 'include',
+    })
+    .then((res) => res.json())
+    .then((data) => {
 
-        setTrip({
-          _id: data.trip._id,
-          destination: data.trip.destination,
-          travTime: data.trip.travTime,
-          passengers: data.trip.passengers,
-          seat: data.trip.seat,
-          firstClass: data.trip.firstClass,
-          createdAt: data.trip.createdAt,
-        });
-
-        getPlanet(data.trip.destination);
+      setTrip({
+        _id: data.trip._id,
+        destination: data.trip.destination,
+        travTime: data.trip.travTime,
+        passengers: data.trip.passengers,
+        seat: data.trip.seat,
+        firstClass: data.trip.firstClass,
+        createdAt: data.trip.createdAt,
       });
+
+      getPlanet(data.trip.destination);
+
+    });
+    
   }, []);
 
   const getPlanet = (planetId: string) => {
