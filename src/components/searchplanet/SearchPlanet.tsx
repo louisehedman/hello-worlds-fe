@@ -3,6 +3,7 @@ import axios from "axios";
 import { API_URL } from "../../reusable/urls";
 import { Link } from "react-router-dom";
 import "./SearchPlanet.css";
+import { textSpanIntersectsWith } from "typescript";
 
 const SearchPlanet: React.FC = () => {
   const [planets, setPlanets] = useState([]);
@@ -40,9 +41,11 @@ const SearchPlanet: React.FC = () => {
               />
               {planets.map((planet: any) => {
                 if (
-                  search.toLowerCase().includes(planet.name.toLowerCase())
+                  // search.toLowerCase().includes(planet.name.toLowerCase())
+                  planet.name.toLowerCase().startsWith(search) && search 
                 ) {
                   return (
+                    <div className="searchedPlanet">
                     <li key={planet.id}>
                       <h3>{planet.name}</h3>
                       <p>{planet.shortDescription}</p>
@@ -52,6 +55,7 @@ const SearchPlanet: React.FC = () => {
                         </button>
                       </Link>
                     </li>
+                    </div>
                   );
                 } else return null;
               })}
