@@ -1,20 +1,22 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import { PlanetInterface, TripInterface } from "../interfaces/interfaces";
 import { API_URL, GET_TRIP, GET_PLANET } from "../reusable/urls";
+import { useContext } from "../App";
 
 const BookedTrip: React.FC = () => {
   const { tripId } = useParams();
-  const userId = localStorage.getItem("userId");
+
+  const { userId, setUserId } = useContext();
 
   const [trip, setTrip] = useState<TripInterface>();
   const [planet, setPlanet] = useState<PlanetInterface>();
 
   useEffect(() => {
-    fetch(API_URL(GET_TRIP(userId !== null ? JSON.parse(userId) : null, tripId)), {
+    fetch(API_URL(GET_TRIP(userId, tripId)), {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -24,17 +26,19 @@ const BookedTrip: React.FC = () => {
     .then((res) => res.json())
     .then((data) => {
 
-      setTrip({
-        _id: data.trip._id,
-        destination: data.trip.destination,
-        travTime: data.trip.travTime,
-        passengers: data.trip.passengers,
-        seat: data.trip.seat,
-        firstClass: data.trip.firstClass,
-        createdAt: data.trip.createdAt,
-      });
-
-      getPlanet(data.trip.destination);
+      if (data.success) {
+        setTrip({
+          _id: data.trip._id,
+          destination: data.trip.destination,
+          travTime: data.trip.travTime,
+          passengers: data.trip.passengers,
+          seat: data.trip.seat,
+          firstClass: data.trip.firstClass,
+          createdAt: data.trip.createdAt,
+        });
+  
+        getPlanet(data.trip.destination);
+      }
 
     });
     
@@ -78,7 +82,7 @@ const BookedTrip: React.FC = () => {
         />
         <p className="fs-5">
           Number of moons:{" "}
-          <span className="fw-semibold">{planet?.moons?.length}</span>
+          <span className="fw-semibold">{planet?.moons === null ? 0 : planet?.moons?.length}</span>
         </p>
         <p className="fs-5">
           Average Temperature:{" "}
