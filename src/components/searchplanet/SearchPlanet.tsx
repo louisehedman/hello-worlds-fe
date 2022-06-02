@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { PlanetInterface } from "../../interfaces/interfaces";
-
+import { API_URL } from "../../reusable/urls";
+import { Link } from "react-router-dom";
 import "./SearchPlanet.css";
 
 const SearchPlanet: React.FC = () => {
-  const [planets, setPlanets] = useState<PlanetInterface>([]);
+  const [planets, setPlanets] = useState([]);
   const [search, setSearch]: [string, (search: string) => void] = useState("");
 
   const handleChange = (e: { target: { value: string } }) => {
@@ -13,84 +13,53 @@ const SearchPlanet: React.FC = () => {
   };
 
   useEffect(() => {
-    // async function fetchPlanet() {
-    // const result = await axios.get('https://localhost:4000/planets/jupiter');
-    // console.log(result)
-
-    axios
-      .get("http://localhost:4000/planets/6297f2dc62bd76efb826bd44")
-      .then((res) => {
-        const data = res.data;
-
-        console.log(data);
-
-        setPlanets({
-          _id: data.planet._id,
-          name: data.planet.name,
-          moons: data.planet.moons,
-          avgTemp: data.planet.avgTemp,
-          mass: {
-            massValue: data.planet.massValue,
-            massExponent: data.planet.massExponent,
-          },
-          grav: data.planet.grav,
-          radius: data.planet.radius,
-          earthDistance: data.planet.earthDistance,
-          description: data.planet.description,
-          shortDescription: data.planet.shortDescription,
-          image: data.planet.image,
+    if (planets.length === 0) {
+      try {
+        axios.get(API_URL("planets")).then((response: any) => {
+          setPlanets(response.data.planets);
         });
-
-        localStorage.setItem("planetId", data.planet._id);
-      });
-    // }
-  }, []);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  });
 
   return (
     <div className="container">
       <div className="row">
-        <div className="col-6">
-          <h1 className="title">Planets API</h1>
-        </div>
         <div className="col-6 searchPlanet">
           <div className="card">
-            <div className="card-header">Search for a planet</div>
             <div className="card-body">
-
-              <ul>
+              <ul className="list-unstyled">
               <input
+                className="form-control me-2"
                 type="text"
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search for a planet"
+                onChange={handleChange}
               />
-
               {planets.map((planet: any) => {
                 if (
-                  search == "" ||
-                  planet.name.toLowerCase().includes(search.toLowerCase())
+                  search.toLowerCase().includes(planet.name.toLowerCase())
                 ) {
                   return (
                     <li key={planet.id}>
-                      <h3>{planet.id}</h3>
-                      <p>{planet.name}</p>
-                      <p>{planet.description}</p>
+                      <h3>{planet.name}</h3>
+                      <p>{planet.shortDescription}</p>
+                      <Link to={"/planet/" + planet.name}>
+                        <button className="p-1 mx-1 my-3 btn btn-outline-success">
+                          Find out more about planet
+                        </button>
+                      </Link>
                     </li>
                   );
-                }
-                return null;
+                } else return null;
               })}
               </ul>
             </div>
           </div>
-
-          <div>
-            <button className="btn btn-warning btn-lg">Search</button>
-          </div>
         </div>
       </div>
-
-      <h2 className="subTitle">Here is the Planet</h2>
-      <h4>Planet info</h4>
     </div>
   );
 };

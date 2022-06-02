@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom"
+import SearchPlanet from "../searchplanet/SearchPlanet";
 
 export const Header: React.FC = () => {
   const userId = localStorage.getItem("userId");
@@ -102,7 +103,7 @@ export const Header: React.FC = () => {
               </ul>
             </li>
           </ul>
-          <form className="d-flex">
+          {/*<form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
@@ -116,7 +117,8 @@ export const Header: React.FC = () => {
             >
               Search
             </button>
-          </form>
+          </form>*/}
+          <SearchPlanet />
         </div>
       </div>
     </nav>
