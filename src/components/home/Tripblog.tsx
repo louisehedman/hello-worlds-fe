@@ -10,7 +10,6 @@ function TripBlog() {
     if (blogs.length === 0) {
       try {
         axios.get(API_URL("blogs")).then((response: any) => {
-          console.log(response.data);
           setBlogs(response.data.blogs);
         });
       } catch (error) {
@@ -41,7 +40,7 @@ function TripBlog() {
 
         {blogs.map((blog: any, index: number) => {
           return (
-            <div className="p-4 ">
+            <div key={index} className="p-4 ">
               <div className="px-4">
                 <h3>{blog.title}</h3>
                 <p>{getExcerpt(blog.body)}</p>

@@ -10,13 +10,13 @@ function BlogPage() {
     title: "",
     date: "",
     body: "",
-  });
+  });  
 
   useEffect(() => {
+    
     if (blog.author === "") {
       try {
-        axios.get(API_URL(`blogs/${blogId}`)).then((response: any) => {
-          console.log(response.data);
+        axios.get(API_URL(`blogs/${blogId.id}`)).then((response: any) => {
           setBlog(response.data.blog);
         });
       } catch (error) {
