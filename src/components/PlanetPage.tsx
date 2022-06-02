@@ -10,7 +10,7 @@ export const PlanetPage = () => {
   let { slug } = useParams();
 
   const getPlanet = async () => {
-    await axios.get(`http://localhost:4000/planets/${slug}`).then((res) => {
+    await axios.get(API_URL(`planets/${slug}`).then((res) => {
       setPlanet({
         _id: res.data.planet._id,
         name: res.data.planet.name,
