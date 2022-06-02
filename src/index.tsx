@@ -11,11 +11,8 @@ import Home from "./components/home/Home";
 import About from "./components/about/About";
 import User from "./pages/User";
 import BookedTrip from "./pages/BookedTrip";
-<<<<<<< HEAD
 import { PlanetPage } from './components/PlanetPage';
-=======
 import BlogPage from "./pages/blogpage";
->>>>>>> c804382eec5fa7b21921ea5111e206001414ddd7
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
