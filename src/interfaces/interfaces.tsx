@@ -17,11 +17,13 @@ export interface PlanetInterface {
 
 export interface TripInterface {
   _id?: string | undefined;
+  passengers?: number | undefined;
+  seat?: string | undefined;
   destination: string | undefined;
   travTime: number | undefined;
-  departure: string | undefined;
+  departure?: string | undefined;
   firstClass: boolean | undefined;
-  createdAt: string | undefined;
+  createdAt?: string | undefined;
   planet?: PlanetInterface | undefined;
 }
 
