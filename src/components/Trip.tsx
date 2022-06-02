@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 import { API_URL, GET_PLANET } from "../reusable/urls";
 import { TripInterface, PlanetInterface } from "../interfaces/interfaces";
-import { Link } from "react-router-dom";
 
 interface Props {
   trip: TripInterface;
