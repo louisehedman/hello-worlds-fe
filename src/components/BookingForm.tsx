@@ -2,9 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { TripInterface } from "../interfaces/interfaces";
 import { API_URL, CREATE_TRIP } from "../reusable/urls";
+import { Props } from "./SuperAwesomeButton";
 
-// Props destination + distance
-const BookingForm: React.FC = () => {
+const BookingForm: React.FC<Props> = ({
+  destination,
+  distanceToEarth,
+  setApplicationSent,
+}) => {
   const [state, setState] = useState<TripInterface>({
     destination: undefined,
     passengers: undefined,
@@ -16,8 +20,10 @@ const BookingForm: React.FC = () => {
   useEffect(() => {
     setState({
       ...state,
-      travTime: Math.floor(558000000 / 28000),
-      destination: "6297c9afa81b73af9480f196",
+      travTime: distanceToEarth
+        ? Math.floor(distanceToEarth / 28000)
+        : undefined,
+      destination: destination,
     });
   }, []);
 
@@ -47,6 +53,7 @@ const BookingForm: React.FC = () => {
       });
       console.log("res: ", res);
       if (res.status === 200) {
+        if (setApplicationSent !== undefined) setApplicationSent(true);
         console.log(res);
       } else {
         console.log("Some error occured");
@@ -88,7 +95,6 @@ const BookingForm: React.FC = () => {
             <label>Choose class:</label>
             <label htmlFor="firstClass">1st class</label>
             <input
-              // className="form-control radio"
               type="radio"
               id="firstClass"
               name="firstClass"
@@ -100,7 +106,6 @@ const BookingForm: React.FC = () => {
             />
             <label htmlFor="economy">Economy:</label>
             <input
-              // className="form-control radio"
               type="radio"
               id="economy"
               name="firstClass"
@@ -115,7 +120,6 @@ const BookingForm: React.FC = () => {
             <label>Seating preference:</label>
             <label htmlFor="window">Window</label>
             <input
-              // className="form-control radio"
               type="radio"
               id="window"
               name="seat"
@@ -127,7 +131,6 @@ const BookingForm: React.FC = () => {
             />
             <label htmlFor="aisle">Aisle</label>
             <input
-              // className="form-control radio"
               type="radio"
               id="aisle"
               name="seat"
@@ -139,7 +142,6 @@ const BookingForm: React.FC = () => {
             />
             <label htmlFor="surprise">Surprise me</label>
             <input
-              // className="form-control radio"
               type="radio"
               id="surprise"
               name="seat"
