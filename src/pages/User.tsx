@@ -4,16 +4,31 @@ import axios from 'axios';
 import TripList from "../components/TripList";
 import { API_URL, GET_USER } from "../reusable/urls";
 import { UserInterface } from '../interfaces/interfaces'
+import { useNavigate } from "react-router-dom";
 
 const User: React.FC = () => {
   const [user, setUser] = useState<UserInterface>();
 
+  const session = localStorage.getItem("userId");
+
+  const navigate = useNavigate();
+
+
   useEffect(() => {
-    axios.get(API_URL(GET_USER("628b720f3496e31190e38a35")))
-      .then((res) => {
+    if (session === null || session === "") {
+      navigate("/login");
+    }
 
-        const data = res.data;
-
+    fetch(API_URL(GET_USER(session !== null ? JSON.parse(session) : null)), {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }, 
+      credentials: 'include',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        
         setUser({
           _id: data.user._id,
           firstName: data.user.firstName,
@@ -22,10 +37,10 @@ const User: React.FC = () => {
           isAdmin: data.user.isAdmin,
           tripList: data.user.tripList,
         });
-
-        localStorage.setItem("userId", data.user._id);
-      });
+      })
+  
   }, []);
+
   return (
     <main className="d-flex flex-column align-items-center text-white">
       <section>
