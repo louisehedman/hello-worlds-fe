@@ -76,7 +76,7 @@ const PlanetSlider = () => {
                       add +
                     </button>
                   )}
-                  <Link to={"/planet/" + planet.name.toLowerCase()}>
+                  <Link to={"/planet/" + planet.name}>
                     <button className="p-1 mx-1 my-3 btn btn-outline-light">
                       read more
                     </button>

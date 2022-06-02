@@ -11,6 +11,7 @@ import Home from "./components/home/Home";
 import About from "./components/about/About";
 import User from "./pages/User";
 import BookedTrip from "./pages/BookedTrip";
+import { PlanetPage } from './components/PlanetPage';
 import BlogPage from "./pages/blogpage";
 
 const root = ReactDOM.createRoot(
@@ -23,12 +24,13 @@ root.render(
       <Route path="/" element={<App />}>
         <Route path='/user/:id' element={<User />} />
         <Route path='/booked-trip/:tripId' element={<BookedTrip />} />
-        {/* <Route path='/planet/:slug' element={<PlanetPage />} /> */}
+         <Route path='/planet/:slug' element={<PlanetPage />} /> 
         <Route path="/" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="about" element={<About />}></Route>
         <Route path="blogs/:id" element={<BlogPage />}></Route>
       </Route>
+      <Route path='/planet/:slug' element={<PlanetPage />} />
     </Routes>
   </BrowserRouter>
 );

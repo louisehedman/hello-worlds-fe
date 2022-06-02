@@ -51,6 +51,7 @@ const BookedTrip: React.FC = () => {
           radius: data.planet.radius,
           earthDistance: data.planet.earthDistance,
           shortDescription: data.planet.shortDescription,
+          description: data.planet.description,
           image: data.planet.image
         })
       })
