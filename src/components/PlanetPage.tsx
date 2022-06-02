@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { createUnparsedSourceFile } from "typescript";
 import { PlanetInterface } from '../interfaces/interfaces';
+import { API_URL } from "../reusable/urls";
 
 
 export const PlanetPage = () => {
@@ -10,7 +11,7 @@ export const PlanetPage = () => {
   let { slug } = useParams();
 
   const getPlanet = async () => {
-    await axios.get(`http://localhost:4000/planets/${slug}`).then((res) => {
+    await axios.get(API_URL(`planets/${slug}`)).then((res) => {
       setPlanet({
         _id: res.data.planet._id,
         name: res.data.planet.name,
