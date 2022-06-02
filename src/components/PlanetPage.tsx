@@ -34,13 +34,16 @@ export const PlanetPage = () => {
   return (
     <div>
       <div className="container px-4 pt-4 bg-dark">
-        <h2 className="text-left text-white">{planet?.name}</h2>
-        <SuperAwesomeButton
-          destination={planet?._id}
-          distanceToEarth={planet?.earthDistance}
-          planetName={planet?.name}
-        />
+        <div className="d-flex align-items-baseline justify-content-around">
+          <h2 className="text-left text-white d-inline">{planet?.name}</h2>
+          <SuperAwesomeButton
+            destination={planet?._id}
+            distanceToEarth={planet?.earthDistance}
+            planetName={planet?.name}
+          />
+        </div>
         <img
+          className="mx-auto d-block"
           src={`${planet?.image}`}
           width="20px"
           style={{
