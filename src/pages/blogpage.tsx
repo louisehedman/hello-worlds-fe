@@ -10,20 +10,20 @@ function BlogPage() {
     title: "",
     date: "",
     body: "",
-  });
+  });  
 
   useEffect(() => {
-    if (blog.author === "") {
+    const fetchBlog = async () => {
       try {
-        axios.get(API_URL(`blogs/${blogId}`)).then((response: any) => {
-          console.log(response.data);
+        await axios.get(API_URL(`blogs/${blogId.id}`)).then((response: any) => {
           setBlog(response.data.blog);
         });
       } catch (error) {
         console.log(error);
       }
     }
-  });
+    fetchBlog();
+  }, [blogId.id]);
 
   return (
     <>

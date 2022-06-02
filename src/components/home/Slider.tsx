@@ -9,41 +9,25 @@ import { API_URL } from "../../reusable/urls";
 
 const PlanetSlider = () => {
   const [planets, setPlanets] = useState([]);
-  const auth = 1;
-  const userId = 1;
 
   useEffect(() => {
-    if (planets.length === 0) {
+    const fetchPlanets = async () => {
       try {
-        axios.get(API_URL("planets")).then((response: any) => {
+        await axios.get(API_URL("planets")).then((response: any) => {
           setPlanets(response.data.planets);
         });
       } catch (error) {
         console.log(error);
       }
     }
-  });
+    fetchPlanets();
+  }, []);
 
   function numberWithSpaces(nr: number) {
     return nr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
 
-  // if user is logged in and there is a user id, add planet to list
-  // const addPlanet = async (planet: string) => {
-  //   if (auth && userId) {
-  //     return axios
-  //       .patch(API_URL(`create-trip/${userId}`), {
-  //         destination: planet,
-  //       })
-  //       .then((response) => {
-  //         console.log(response);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }
-  // };
-
+  
   return (
     <div className="container px-4 pt-4">
       <h2 className="text-center text-white">Our Planets</h2>
