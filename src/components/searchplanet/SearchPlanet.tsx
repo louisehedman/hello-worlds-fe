@@ -3,7 +3,6 @@ import axios from "axios";
 import { API_URL } from "../../reusable/urls";
 import { Link } from "react-router-dom";
 import "./SearchPlanet.css";
-import { textSpanIntersectsWith } from "typescript";
 
 const SearchPlanet: React.FC = () => {
   const [planets, setPlanets] = useState([]);
