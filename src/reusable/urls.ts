@@ -7,3 +7,5 @@ export const GET_PLANET = (id: string | undefined) => `planets/${id}`;
 
 export const GET_TRIP = (userId: string | null, tripId: string | undefined) =>
   `get-trip/${userId}/${tripId}`;
+
+export const CREATE_TRIP = (userId: string | null) => `create-trip/${userId}`;
