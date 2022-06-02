@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+
+.title {
+  color: #fff;
+  font-size: 50px;
+  text-shadow: 5px 5px rgb(0, 0, 0);
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+h4 {
+  color: #fff;
+}
+
+.subTitle {
+  color: #fff;
+  font-size: 40px;
+  margin-top: 50px;
+}
