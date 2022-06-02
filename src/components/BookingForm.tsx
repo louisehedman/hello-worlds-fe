@@ -66,7 +66,7 @@ const BookingForm: React.FC<Props> = ({
   return (
     <>
       <form
-        className="w-50 m-auto"
+        className="w-90 m-auto"
         onSubmit={(e) =>
           handleSubmit(e, API_URL(CREATE_TRIP("628f362b9c0dad6d50c16e24")))
         }
@@ -91,10 +91,11 @@ const BookingForm: React.FC<Props> = ({
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-          <div>
-            <label>Choose class:</label>
+          <div className="form-group  my-4">
+            <label className="d-block">Choose class:</label>
             <label htmlFor="firstClass">1st class</label>
             <input
+              className="ms-2 me-4"
               type="radio"
               id="firstClass"
               name="firstClass"
@@ -106,6 +107,7 @@ const BookingForm: React.FC<Props> = ({
             />
             <label htmlFor="economy">Economy:</label>
             <input
+              className="ms-2 me-4"
               type="radio"
               id="economy"
               name="firstClass"
@@ -116,10 +118,11 @@ const BookingForm: React.FC<Props> = ({
               }}
             />
           </div>
-          <div>
-            <label>Seating preference:</label>
+          <div className="form-group  my-4">
+            <label className="d-block">Seating preference:</label>
             <label htmlFor="window">Window</label>
             <input
+              className="ms-2 me-4"
               type="radio"
               id="window"
               name="seat"
@@ -131,6 +134,7 @@ const BookingForm: React.FC<Props> = ({
             />
             <label htmlFor="aisle">Aisle</label>
             <input
+              className="ms-2 me-4"
               type="radio"
               id="aisle"
               name="seat"
@@ -142,6 +146,7 @@ const BookingForm: React.FC<Props> = ({
             />
             <label htmlFor="surprise">Surprise me</label>
             <input
+              className="ms-2 me-4"
               type="radio"
               id="surprise"
               name="seat"
@@ -153,7 +158,7 @@ const BookingForm: React.FC<Props> = ({
             />
           </div>
           <input
-            className="btn btn-light"
+            className="btn btn-outline-success btn-block"
             type="submit"
             value="Send application"
           />
