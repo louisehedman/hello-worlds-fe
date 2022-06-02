@@ -23,7 +23,7 @@ function BlogPage() {
       }
     }
     fetchBlog();
-  }, []);
+  }, [blogId.id]);
 
   return (
     <>

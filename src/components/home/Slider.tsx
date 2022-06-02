@@ -9,8 +9,6 @@ import { API_URL } from "../../reusable/urls";
 
 const PlanetSlider = () => {
   const [planets, setPlanets] = useState([]);
-  const auth = 1;
-  const userId = 1;
 
   useEffect(() => {
     const fetchPlanets = async () => {
@@ -28,22 +26,6 @@ const PlanetSlider = () => {
   function numberWithSpaces(nr: number) {
     return nr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
-
-  // if user is logged in and there is a user id, add planet to list
-  // const addPlanet = async (planet: string) => {
-  //   if (auth && userId) {
-  //     return axios
-  //       .patch(API_URL(`create-trip/${userId}`), {
-  //         destination: planet,
-  //       })
-  //       .then((response) => {
-  //         console.log(response);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }
-  // };
 
   return (
     <div className="container px-4 pt-4">

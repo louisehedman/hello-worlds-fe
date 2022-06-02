@@ -7,7 +7,7 @@ import { API_URL } from "../../reusable/urls";
 function TripBlog() {
   const [blogs, setBlogs] = useState([]);
   const [currentPage, setCurentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(3);
+  const postsPerPage = 3;
 
   useEffect(() => {
     const fetchBlogs = async () => {

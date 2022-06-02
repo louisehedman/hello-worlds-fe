@@ -37,12 +37,12 @@ export const Header: React.FC = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "white" }}>
+              <a className="nav-link" href="!#" style={{ color: "white" }}>
                 Destinations
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "white" }}>
+              <a className="nav-link" href="!#" style={{ color: "white" }}>
                 Gallary
               </a>
             </li>
@@ -84,7 +84,7 @@ export const Header: React.FC = () => {
                 <li>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="!#"
                     style={{ color: "white" }}
                   >
                     My favourites
@@ -93,7 +93,7 @@ export const Header: React.FC = () => {
                 <li>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="!#"
                     style={{ color: "white" }}
                   >
                     Some info
