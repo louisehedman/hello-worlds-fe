@@ -25,14 +25,13 @@ root.render(
       <Route path="/" element={<App />}>
         <Route path='/user/:id' element={<User />} />
         <Route path='/booked-trip/:tripId' element={<BookedTrip />} />
-         <Route path='/planet/:slug' element={<PlanetPage />} /> 
+        <Route path='/planet/:slug' element={<PlanetPage />} /> 
         <Route path="/" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="about" element={<About />}></Route>
         <Route path="blogs/:id" element={<BlogPage />}></Route>
+        <Route path="advanced-search" element={<AdvancedSearch />}></Route>
       </Route>
-      <Route path="advanced-search" element={<AdvancedSearch />}></Route>
-      <Route path='/planet/:slug' element={<PlanetPage />} />
     </Routes>
   </BrowserRouter>
 );

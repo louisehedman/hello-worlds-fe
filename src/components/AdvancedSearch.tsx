@@ -28,12 +28,14 @@ const AdvancedSearch: React.FC = () => {
     }
     fetchPlanets();
   }, []);
+
     
     return (
-    <div className="container my-3">
-     <div className="card">
+    <div className="container my-3 bg-black">
+     <div className="card bg-black rounded mb-4 border border-success bg-opacity-75 text-center text-white">
      <div className="card-body w-75 m-auto">
      <h2 className="card-title my-3">Advanced search</h2>
+     <h3>Temp</h3>
       <Range
       values={tempValues}
       step={tempStep}
@@ -78,8 +80,8 @@ const AdvancedSearch: React.FC = () => {
           {...props}
           style={{
             ...props.style,
-            height: "42px",
-            width: "42px",
+            height: "1.5em",
+            width: "1.5em",
             borderRadius: "4px",
             backgroundColor: "#FFF",
             display: "flex",
@@ -98,6 +100,7 @@ const AdvancedSearch: React.FC = () => {
         </div>
       )}
     />
+    <h3>Distance</h3>
     <Range
       values={distanceValues}
       step={distanceStep}
@@ -108,7 +111,6 @@ const AdvancedSearch: React.FC = () => {
         setDistanceValues(distanceValues);
       }}
       renderTrack={({ props, children }) => (
-        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
           onMouseDown={props.onMouseDown}
           onTouchStart={props.onTouchStart}
@@ -143,8 +145,8 @@ const AdvancedSearch: React.FC = () => {
           {...props}
           style={{
             ...props.style,
-            height: "42px",
-            width: "42px",
+            height: "1.5em",
+            width: "1.5em",
             borderRadius: "4px",
             backgroundColor: "#FFF",
             display: "flex",
@@ -166,18 +168,23 @@ const AdvancedSearch: React.FC = () => {
     </div>
     </div>
     <div className="card">
-            <div className="card-body">
-              <ul className="list-unstyled">
+        <div className="card-body">
+            <ul className="list-unstyled">
               {planets.map((planet: any) => {
                   console.log(planet.avgTemp)
                 if (
-                    (tempValues < planet.avgTemp) === true
+                    planet.avgTemp >= tempValues[0] && 
+                    planet.avgTemp <= tempValues[1] &&
+                    planet.earthDistance >= distanceValues[0] &&
+                    planet.earthDistance <= distanceValues[1]
+                    
                 ) {
                   return (
                     <li key={planet.id}>
                       <h3>{planet.name}</h3>
                       <p>{planet.shortDescription}</p>
                       <p>{planet.avgTemp}</p>
+                      <p>{planet.earthDistance}</p>
                       <Link to={"/planet/" + planet.name}>
                         <button className="p-1 mx-1 my-3 btn btn-outline-success">
                           Find out more about planet
