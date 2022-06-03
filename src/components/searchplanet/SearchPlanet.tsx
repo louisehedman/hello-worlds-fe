@@ -9,7 +9,8 @@ const SearchPlanet: React.FC = () => {
   const [search, setSearch]: [string, (search: string) => void] = useState("");
 
   const handleChange = (e: { target: { value: string } }) => {
-    setSearch(e.target.value);
+    const formatString = e.target.value.toLowerCase();
+    setSearch(formatString);
   };
 
   useEffect(() => {
