@@ -1,6 +1,9 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Range, getTrackBackground } from 'react-range';
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { API_URL } from '../reusable/urls';
 
 const AdvancedSearch: React.FC = () => {
     const tempStep = 1;
@@ -11,6 +14,20 @@ const AdvancedSearch: React.FC = () => {
     const distanceMax = 5000000000;
     const [tempValues, setTempValues] = useState([44, 737]);
     const [distanceValues, setDistanceValues] = useState([40000000, 5000000000]);
+    const [planets, setPlanets] = useState([]);
+
+  useEffect(() => {
+    const fetchPlanets = async () => {
+      try {
+        await axios.get(API_URL("planets")).then((response: any) => {
+          setPlanets(response.data.planets);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchPlanets();
+  }, []);
     
     return (
     <div className="container my-3">
@@ -148,6 +165,31 @@ const AdvancedSearch: React.FC = () => {
     />
     </div>
     </div>
+    <div className="card">
+            <div className="card-body">
+              <ul className="list-unstyled">
+              {planets.map((planet: any) => {
+                  console.log(planet.avgTemp)
+                if (
+                    (tempValues < planet.avgTemp) === true
+                ) {
+                  return (
+                    <li key={planet.id}>
+                      <h3>{planet.name}</h3>
+                      <p>{planet.shortDescription}</p>
+                      <p>{planet.avgTemp}</p>
+                      <Link to={"/planet/" + planet.name}>
+                        <button className="p-1 mx-1 my-3 btn btn-outline-success">
+                          Find out more about planet
+                        </button>
+                      </Link>
+                    </li>
+                  );
+                } else return null;
+              })}
+              </ul>
+            </div>
+          </div>
     </div>
     )
 }
