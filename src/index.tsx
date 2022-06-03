@@ -13,6 +13,7 @@ import User from "./pages/User";
 import BookedTrip from "./pages/BookedTrip";
 import { PlanetPage } from './components/PlanetPage';
 import BlogPage from "./pages/blogpage";
+import AdvancedSearch from "./components/AdvancedSearch";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -30,6 +31,7 @@ root.render(
         <Route path="about" element={<About />}></Route>
         <Route path="blogs/:id" element={<BlogPage />}></Route>
       </Route>
+      <Route path="advanced-search" element={<AdvancedSearch />}></Route>
       <Route path='/planet/:slug' element={<PlanetPage />} />
     </Routes>
   </BrowserRouter>
