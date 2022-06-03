@@ -1,18 +1,31 @@
-import React from "react";
-import "./App.css";
+import React, { useState } from "react";
+import { Outlet, useOutletContext } from "react-router-dom";
+
 import "./App.css";
 import { Header } from "./components/header/Header";
 import { Footer } from "./components/Footer";
-import { Outlet } from "react-router-dom";
+
+type ContextType = {
+  userId: string | undefined;
+  setUserId: React.Dispatch<React.SetStateAction<string | undefined>>;
+}
 
 function App() {
+  const session = localStorage.getItem("userId");
+
+  const [userId, setUserId] = useState<string | undefined>(session === null ? undefined : session);
+
   return (
-    <div className="App">
-      <Header />
-      <Outlet />
+    <div className="App" style={{display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "100vh"}}>
+      <Header userId={userId}  />
+      <Outlet context={{ userId, setUserId }} />
       <Footer />
     </div>
   );
 }
 
 export default App;
+
+export function useContext() {
+  return useOutletContext<ContextType>();
+}

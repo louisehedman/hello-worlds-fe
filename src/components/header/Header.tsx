@@ -1,20 +1,19 @@
 import React from "react";
 import "./Header.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import SearchPlanet from "../searchplanet/SearchPlanet";
 
-export const Header: React.FC = () => {
-  const userId = localStorage.getItem("userId");
+interface Props {
+  userId: string | undefined;
+}
 
+export const Header: React.FC<Props> = ({ userId }) => {
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-dark bg-dark relative-top m-0"
-      style={{ opacity: 0.9 }}
-    >
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark relative-top m-0 bg-opacity-75">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img src="/logo001.png" alt="" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -38,14 +37,9 @@ export const Header: React.FC = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "white" }}>
+              <Link className="nav-link" to="/" style={{ color: "white" }}>
                 Destinations
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#" style={{ color: "white" }}>
-                Gallary
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/about" style={{ color: "white" }}>
@@ -53,9 +47,9 @@ export const Header: React.FC = () => {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href={userId ? `/user/${userId}` : "/"}
+                to={userId ? `/user/${userId}` : "/"}
                 style={{ color: "white" }}
                 id="navbarDropdown"
                 role="button"
@@ -63,7 +57,7 @@ export const Header: React.FC = () => {
                 aria-expanded="false"
               >
                 User
-              </a>
+              </Link>
               <ul
                 className="dropdown-menu"
                 aria-labelledby="navbarDropdown"
@@ -73,33 +67,38 @@ export const Header: React.FC = () => {
                   opacity: 0.9,
                 }}
               >
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href={userId ? `/user/${userId}` : "/"}
-                    style={{ color: "white" }}
-                  >
-                    My profile
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                    style={{ color: "white" }}
-                  >
-                    My favourites
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                    style={{ color: "white" }}
-                  >
-                    Some info
-                  </a>
-                </li>
+                {userId ? (
+                  <>
+                    <li>
+                      <Link
+                        className="dropdown-item"
+                        to={userId ? `/user/${userId}` : "/"}
+                        style={{ color: "white" }}
+                      >
+                        My trips
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="dropdown-item"
+                        to="/logout"
+                        style={{ color: "white" }}
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <li>
+                    <Link
+                      className="dropdown-item"
+                      to="/login"
+                      style={{ color: "white" }}
+                    >
+                      Login
+                    </Link>
+                  </li>
+                )}
               </ul>
             </li>
           </ul>
