@@ -30,9 +30,9 @@ const Destinations: React.FC = () => {
   }, []);
 
   return (
-    <div className="container my-3 bg-black">
+    <div className="container my-3">
       <h1 className="text-center text-white">Destinations</h1>
-      <div className="card bg-black rounded mb-4 border border-success bg-opacity-75 text-center text-white">
+      <div className="card bg-black rounded mb-4 border border-white bg-opacity-75 text-center text-white">
         <div className="card-body w-75 m-auto">
           <h2 className="card-title my-3 text-warning">Sort By</h2>
           <h3 className="card-subtitle mt-2 mb-3">Temperature</h3>
@@ -179,6 +179,7 @@ const Destinations: React.FC = () => {
           </output>
         </div>
       </div>
+      <h2 className="my-3 text-center text-warning">Matching Planets</h2>
       <ul className="list-unstyled">
         {planets.map((planet: any) => {
           console.log(planet.avgTemp);
@@ -189,10 +190,11 @@ const Destinations: React.FC = () => {
             planet.earthDistance <= distanceValues[1]
           ) {
             return (
-              <div className="card mt-2 bg-black rounded mb-4 border border-success bg-opacity-75 text-center text-white">
+              <div className="card mt-2 bg-black rounded mb-4 border border-white bg-opacity-75 text-center text-white">
                 <li className="mt-2" key={planet.id}>
                   <h3>{planet.name}</h3>
                   <img
+                    className="img-fluid"
                     src={planet.image}
                     alt={"picture of " + planet.name}
                     width="10px"
@@ -202,7 +204,7 @@ const Destinations: React.FC = () => {
                     }}
                   />
                   <p className="w-75 m-auto">{planet.shortDescription}</p>
-                  <p>Temperature: {planet.avgTemp}°</p>
+                  <p className="mt-3">Temperature: {planet.avgTemp}°</p>
                   <p>Distance: {planet.earthDistance} km</p>
                   <Link to={"/planet/" + planet.name}>
                     <button className="p-1 mx-1 my-3 btn btn-success">
