@@ -9,7 +9,7 @@ body {
 }
 
 .card {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .btn {
@@ -26,33 +26,24 @@ h4 {
   margin-top: 50px;
 }
 
-
-
 .card {
-  /* position: absolute; */
-  /* top: 45px; */
-  /* right: 0; */
-  width: 50%;
-  opacity: 0.75;
-  /* z-index: 1; */
-  
-}
-
-
-.card-body {
-  top: 45px;
-  right: 0;
+  width: 20%;
+  position: absolute;
   z-index: 1;
-  /* margin-bottom: 20px; */
-} 
-
-.container {
-  /* position: absolute; */
-  /* 
-top: 45px;
-right: 0;
-width: 50%; */
-  
+  top: 20px;
+  right: 150px;
+  /* background-color: #f3f2cf; */
+  background-color: #f5fffa;
 }
 
+.planetContainer {
+  opacity: 0.7;
+  float: right;
+  width: 45%;
+  z-index: 1;
+}
 
+.searchedPlanet {
+  margin-top: 20px;
+  border-bottom: 3px solid black;
+}
