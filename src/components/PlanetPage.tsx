@@ -48,7 +48,7 @@ export const PlanetPage = () => {
           width="20px"
           style={{
             width: "auto",
-            height: "40vh",
+            height: "250px",
           }}
         />
         <div className="text-center py-4 bg-white bg-opacity-10 border border-gray rounded text-white h-100 shadow-lg">
