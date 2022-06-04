@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "../../App";
-import LoginForm from "./LoginForm";
-import RegisterForm from "./RegisterForm";
+import { useContext } from "../App";
+import LoginForm from "../components/login/LoginForm";
+import RegisterForm from "../components/login/RegisterForm";
 
 const Login: React.FC = () => {
   const [hasAccount, setHasAccount] = useState(true);
