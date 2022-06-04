@@ -208,7 +208,7 @@ const Destinations: React.FC = () => {
                   <p>Distance: {planet.earthDistance} km</p>
                   <Link to={"/planet/" + planet.name}>
                     <button className="p-1 mx-1 my-3 btn btn-success">
-                      Find out more about planet
+                      Find out more about {planet.name}
                     </button>
                   </Link>
                 </li>
