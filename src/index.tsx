@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import App from "./App";
 import Login from "./components/login/Login";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
@@ -14,6 +16,7 @@ import BookedTrip from "./pages/BookedTrip";
 import { PlanetPage } from './components/PlanetPage';
 import BlogPage from "./pages/blogpage";
 import Destinations from "./components/Destinations";
+import Logout from "./components/logout/Logout";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -31,6 +34,7 @@ root.render(
         <Route path="about" element={<About />}></Route>
         <Route path="blogs/:id" element={<BlogPage />}></Route>
         <Route path="destinations" element={<Destinations />}></Route>
+        <Route path="/logout" element={<Logout />} />
       </Route>
     </Routes>
   </BrowserRouter>

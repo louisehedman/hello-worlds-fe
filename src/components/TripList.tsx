@@ -7,15 +7,13 @@ interface Props {
   tripList: Array<TripInterface> | undefined;
 }
 
-
 const TripList: React.FC<Props> = ({ tripList }) => {
-
-  console.log(tripList)
+  
   return (
     <section>
-      <h2>Your bookings</h2>
+      <h2>{tripList === undefined || tripList?.length === 0 ? "You have no applications yet" : "Your applications"}</h2>
       <div className="d-flex">
-        {tripList?.map((trip: TripInterface) => (
+        {tripList && tripList?.map((trip: TripInterface) => (
           <Trip trip={trip} />
         ))}
       </div>
