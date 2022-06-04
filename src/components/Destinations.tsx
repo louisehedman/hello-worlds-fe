@@ -2,8 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Range, getTrackBackground } from "react-range";
-import { Link } from "react-router-dom";
 import { API_URL } from "../reusable/urls";
+import { Link } from "react-router-dom";
 
 const Destinations: React.FC = () => {
   const tempStep = 1;
