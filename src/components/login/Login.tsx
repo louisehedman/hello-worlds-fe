@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "../../App";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
-// import LoginForm from "../../auth/components/LoginForm";
-// import RegisterForm from "../../auth/components/RegisterForm";
 
 const Login: React.FC = () => {
   const [hasAccount, setHasAccount] = useState(true);
