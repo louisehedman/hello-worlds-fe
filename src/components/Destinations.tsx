@@ -100,13 +100,13 @@ const Destinations: React.FC = () => {
               </div>
             )}
           />
-          <output style={{ marginBottom: "30px", float: "left" }} id="output">
-            {tempValues[0].toFixed(1)}
+          <output style={{ marginBottom: "30px", float: "left" }}>
+            {tempValues[0] + " °"}
           </output>
-          <output style={{ marginBottom: "30px", float: "right" }} id="output">
-            {tempValues[1].toFixed(1)}
+          <output style={{ marginBottom: "30px", float: "right" }}>
+            {tempValues[1] + " °"}
           </output>
-          <h3 className="card-subtitle mt-4 mb-3">Distance</h3>
+          <h3 className="card-subtitle mt-4 mb-3">Distance from Earth</h3>
           <Range
             values={distanceValues}
             step={distanceStep}
@@ -171,11 +171,11 @@ const Destinations: React.FC = () => {
               </div>
             )}
           />
-          <output style={{ marginBottom: "30px", float: "left" }} id="output">
-            {distanceValues[0].toFixed(1)}
+          <output style={{ marginBottom: "30px", float: "left" }}>
+            {distanceValues[0] + " km"}
           </output>
-          <output style={{ marginBottom: "30px", float: "right" }} id="output">
-            {distanceValues[1].toFixed(1)}
+          <output style={{ marginBottom: "30px", float: "right" }}>
+            {distanceValues[1] + " km"}
           </output>
         </div>
       </div>
