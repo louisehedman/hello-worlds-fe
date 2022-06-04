@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="advanced-search" style={{ color: "white" }}>
+              <Link className="nav-link" to="destinations" style={{ color: "white" }}>
                 Destinations
               </Link>
             </li>
