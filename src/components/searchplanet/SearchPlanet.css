@@ -26,6 +26,33 @@ h4 {
   margin-top: 50px;
 }
 
-.searchedPlanet {
+
+
+.card {
+  /* position: absolute; */
+  /* top: 45px; */
+  /* right: 0; */
+  width: 50%;
+  opacity: 0.75;
+  /* z-index: 1; */
   
 }
+
+
+.card-body {
+  top: 45px;
+  right: 0;
+  z-index: 1;
+  /* margin-bottom: 20px; */
+} 
+
+.container {
+  /* position: absolute; */
+  /* 
+top: 45px;
+right: 0;
+width: 50%; */
+  
+}
+
+
