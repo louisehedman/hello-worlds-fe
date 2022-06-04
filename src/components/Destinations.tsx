@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import { Range, getTrackBackground } from "react-range";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { API_URL } from "../reusable/urls";
 
 const Destinations: React.FC = () => {
