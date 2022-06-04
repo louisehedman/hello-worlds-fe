@@ -40,7 +40,7 @@ export const Header: React.FC<Props> = ({ userId }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/" style={{ color: "white" }}>
+              <Link className="nav-link" to="destinations" style={{ color: "white" }}>
                 Destinations
               </Link>
             </li>
