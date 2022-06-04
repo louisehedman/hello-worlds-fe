@@ -45,11 +45,6 @@ export const Header: React.FC<Props> = ({ userId }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="!#" style={{ color: "white" }}>
-                Gallary
-              </a>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link" to="/about" style={{ color: "white" }}>
                 About
               </Link>
