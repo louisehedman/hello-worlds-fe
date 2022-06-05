@@ -29,7 +29,7 @@ export const PlanetPage = () => {
 
   useEffect(() => {
     getPlanet();
-  }, []);
+  }, [slug]);
 
   return (
     <div>

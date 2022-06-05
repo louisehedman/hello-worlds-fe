@@ -13,7 +13,7 @@ import Home from "./components/home/Home";
 import About from "./components/about/About";
 import User from "./pages/User";
 import BookedTrip from "./pages/BookedTrip";
-import { PlanetPage } from './components/PlanetPage';
+import { PlanetPage } from "./components/PlanetPage";
 import BlogPage from "./pages/blogpage";
 import Destinations from "./components/Destinations";
 import Logout from "./components/logout/Logout";
@@ -26,15 +26,15 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route path='/user/:id' element={<User />} />
-        <Route path='/booked-trip/:tripId' element={<BookedTrip />} />
-        <Route path='/planet/:slug' element={<PlanetPage />} /> 
-        <Route path="/" element={<Home />}></Route>
-        <Route path="login" element={<Login />}></Route>
-        <Route path="about" element={<About />}></Route>
-        <Route path="blogs/:id" element={<BlogPage />}></Route>
-        <Route path="destinations" element={<Destinations />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/user/:id" element={<User />} />
+        <Route path="/booked-trip/:tripId" element={<BookedTrip />} />
+        <Route path="/planet/:slug" element={<PlanetPage />} />
+        <Route path="/blogs/:id" element={<BlogPage />} />
+        <Route path="destinations" element={<Destinations />}></Route>
+        <Route path="/about" element={<About />} />
       </Route>
     </Routes>
   </BrowserRouter>

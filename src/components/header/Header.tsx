@@ -1,18 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 import "./Header.css";
+import { Link } from "react-router-dom";
+import SearchPlanet from "../searchplanet/SearchPlanet";
 
 interface Props {
   userId: string | undefined;
 }
 
 export const Header: React.FC<Props> = ({ userId }) => {
-
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-dark bg-dark relative-top m-0 bg-opacity-75"
-    >
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark relative-top m-0 bg-opacity-75">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img src="/logo001.png" alt="" />
@@ -91,7 +88,7 @@ export const Header: React.FC<Props> = ({ userId }) => {
                       </Link>
                     </li>
                   </>
-                ) : 
+                ) : (
                   <li>
                     <Link
                       className="dropdown-item"
@@ -101,12 +98,11 @@ export const Header: React.FC<Props> = ({ userId }) => {
                       Login
                     </Link>
                   </li>
-                }
-                
+                )}
               </ul>
             </li>
           </ul>
-          <form className="d-flex">
+          {/*<form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
@@ -120,7 +116,8 @@ export const Header: React.FC<Props> = ({ userId }) => {
             >
               Search
             </button>
-          </form>
+          </form>*/}
+          <SearchPlanet />
         </div>
       </div>
     </nav>
