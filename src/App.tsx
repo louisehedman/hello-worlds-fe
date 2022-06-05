@@ -29,7 +29,7 @@ function App() {
       }}
     >
       <AuthProvider>
-        <Header userId={userId} />
+        <Header />
         <Outlet context={{ userId, setUserId }} />
         <Footer />
       </AuthProvider>
