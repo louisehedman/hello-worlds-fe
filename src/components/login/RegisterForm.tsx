@@ -13,7 +13,7 @@ const RegisterForm: React.FC = () => {
   // Message variable
   const [message, setMessage] = useState("");
   // User input variable
-  const [state, setState] = useState<UserDetailsInterface>({
+  const [credentials, setCredentials] = useState<UserDetailsInterface>({
     firstName: undefined,
     username: undefined,
     email: undefined,
@@ -27,13 +27,13 @@ const RegisterForm: React.FC = () => {
     }
   }, []);
 
-  // Handles changes in inputs and updates state on each keypress
+  // Handles changes in inputs and updates credentials on each keypress
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setState({
-      ...state,
-      /* Event targets use the same name as state object properties.
-       * Sets the value of the current input to responding state property
+    setCredentials({
+      ...credentials,
+      /* Event targets use the same name as credentials object properties.
+       * Sets the value of the current input to responding credentials property
        */
       [e.target.name]: value,
     });
@@ -43,20 +43,20 @@ const RegisterForm: React.FC = () => {
     // Prevents reloading of page on submit
     e.preventDefault();
     // Set message instead of default validation error from server
-    if (state.password?.length) {
-      if (state.password.length < 8) {
+    if (credentials.password?.length) {
+      if (credentials.password.length < 8) {
         // Refocus the password field
         if (pwdRef.current) {
           pwdRef.current.focus();
         }
-        setState({ ...state, password: "" });
+        setCredentials({ ...credentials, password: "" });
         return setMessage("Password must be at least 8 characters");
       }
     }
     try {
       const res = await axios.post(
         url,
-        { ...state },
+        { ...credentials },
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -97,7 +97,7 @@ const RegisterForm: React.FC = () => {
             className="form-control my-3"
             type="text"
             name="firstName"
-            value={state.firstName}
+            value={credentials.firstName}
             onChange={handleChange}
             required
           />
@@ -106,7 +106,7 @@ const RegisterForm: React.FC = () => {
             className="form-control my-3"
             type="text"
             name="username"
-            value={state.username}
+            value={credentials.username}
             onChange={handleChange}
             required
           />
@@ -116,7 +116,7 @@ const RegisterForm: React.FC = () => {
             className="form-control my-3"
             type="email"
             name="email"
-            value={state.email}
+            value={credentials.email}
             onChange={handleChange}
             required
           />
@@ -126,7 +126,7 @@ const RegisterForm: React.FC = () => {
             className="form-control my-3"
             type="password"
             name="password"
-            value={state.password}
+            value={credentials.password}
             onChange={handleChange}
             required
           />

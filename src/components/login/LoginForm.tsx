@@ -12,7 +12,7 @@ const LoginForm: React.FC = () => {
   // Message variable
   const [message, setMessage] = useState("");
   // User input variable
-  const [state, setState] = useState<UserDetailsInterface>({
+  const [credentials, setCredentials] = useState<UserDetailsInterface>({
     email: undefined,
     password: undefined,
   });
@@ -27,15 +27,15 @@ const LoginForm: React.FC = () => {
   // Clears the error message when correcting email
   useEffect(() => {
     setMessage("");
-  }, [state.email]);
+  }, [credentials.email]);
 
-  // Handles changes in inputs and updates state on each keypress
+  // Handles changes in inputs and updates credentials on each keypress
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setState({
-      ...state,
-      /* Event targets use the same name as state object properties.
-       * Sets the value of the current input to responding state property
+    setCredentials({
+      ...credentials,
+      /* Event targets use the same name as credentials object properties.
+       * Sets the value of the current input to responding credentials property
        */
       [e.target.name]: value,
     });
@@ -48,7 +48,7 @@ const LoginForm: React.FC = () => {
     try {
       const res = await axios.post(
         url,
-        { ...state },
+        { ...credentials },
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -56,21 +56,21 @@ const LoginForm: React.FC = () => {
         }
       );
       // Clears the password field on submit
-      setState({ ...state, password: "" });
+      setCredentials({ ...credentials, password: "" });
       setMessage(`Welcome ${res.data.user}`);
     } catch (err: any) {
       // If password is invalid
       if (err.response.status === 401) {
         if (pwdRef.current) {
           // Clear the password field and refocus password input
-          setState({ ...state, password: "" });
+          setCredentials({ ...credentials, password: "" });
           pwdRef.current.focus();
         }
       }
       // If email is invalid
       else if (emailRef.current) {
         // Clear the password field and focus email input
-        setState({ ...state, password: "" });
+        setCredentials({ ...credentials, password: "" });
         emailRef.current.focus();
       }
       // Set message to error response message
@@ -100,7 +100,7 @@ const LoginForm: React.FC = () => {
             className="form-control my-3"
             type="email"
             name="email"
-            value={state.email}
+            value={credentials.email}
             onChange={handleChange}
             required
           />
@@ -110,7 +110,7 @@ const LoginForm: React.FC = () => {
             className="form-control my-3"
             type="password"
             name="password"
-            value={state.password}
+            value={credentials.password}
             onChange={handleChange}
             required
           />
