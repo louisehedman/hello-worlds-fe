@@ -102,7 +102,7 @@ export const Header: React.FC<Props> = ({ userId }) => {
               </ul>
             </li>
           </ul>
-          {/*<SearchPlanet />*/}
+          <SearchPlanet />
         </div>
       </div>
     </nav>
