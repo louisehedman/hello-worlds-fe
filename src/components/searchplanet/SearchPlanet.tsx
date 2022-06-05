@@ -28,7 +28,6 @@ const SearchPlanet: React.FC = () => {
   return (
     <div className="container planetContainer">
       <div className="row">
-        {/* <div className="col-6 searchPlanet"> */}
           <div className="card">
             <div className="card-body">
               <ul className="list-unstyled">
@@ -63,7 +62,6 @@ const SearchPlanet: React.FC = () => {
           </div>
         </div>
       </div>
-    // </div>
   );
 };
 
