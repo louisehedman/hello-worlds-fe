@@ -80,8 +80,9 @@ export const Header: React.FC = () => {
                     <li>
                       <Link
                         className="dropdown-item"
-                        to="/logout"
+                        to="/"
                         style={{ color: "white" }}
+                        onClick={auth.handleLogout}
                       >
                         Logout
                       </Link>
