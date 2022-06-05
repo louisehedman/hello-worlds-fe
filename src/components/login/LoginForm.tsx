@@ -1,9 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../auth/AuthProvider";
 import { UserDetailsInterface } from "../../interfaces/interfaces";
 import { API_URL } from "../../reusable/urls";
 
 const LoginForm: React.FC = () => {
+  // Use the variables and functions from the AuthContext
+  const auth = useContext(AuthContext);
   // References to input elements
   const emailRef = useRef<HTMLInputElement | null>(null);
   const pwdRef = useRef<HTMLInputElement | null>(null);
@@ -59,6 +63,7 @@ const LoginForm: React.FC = () => {
       );
       // Clears the password field on submit
       setState({ ...state, password: "" });
+      auth?.handleLogin(res.data.user);
       setMessage(`Welcome ${res.data.user}`);
     } catch (err: any) {
       // If password is invalid
