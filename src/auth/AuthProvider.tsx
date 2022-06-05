@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { API_URL } from "../reusable/urls";
 
 // Context interface
 interface AuthContextInterface {
@@ -23,9 +24,23 @@ const AuthProvider = ({ children }: any) => {
     setUserName(username);
   };
 
-  const handleLogout = () => {
-    setSignedIn(false);
-    setUserName("");
+  const handleLogout = async () => {
+    try {
+      await fetch(API_URL("logout"), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      })
+        .then((res) => res.json())
+        .then(() => {
+          setSignedIn(false);
+          setUserName("");
+        });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   // Gathers them in a variable we can pass as a value to the children
