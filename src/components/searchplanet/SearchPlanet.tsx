@@ -28,7 +28,7 @@ const SearchPlanet: React.FC = () => {
   return (
     <div className="container planetContainer">
       <div className="row">
-          <div className="card">
+          <div className="planet-card">
             <div className="card-body">
               <ul className="list-unstyled">
               <input
@@ -48,7 +48,7 @@ const SearchPlanet: React.FC = () => {
                       <h3>{planet.name}</h3>
                       <p>{planet.shortDescription}</p>
                       <Link to={"/planet/" + planet.name}>
-                        <button className="p-1 mx-1 my-3 btn btn-outline-success">
+                        <button className="p-1 mx-1 my-3 btn planet-btn btn-outline-success">
                           Find out more about planet
                         </button>
                       </Link>

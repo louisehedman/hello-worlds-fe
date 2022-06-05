@@ -1,28 +1,8 @@
-body {
-  text-align: center;
-}
-
-.title {
-  color: #fff;
-  font-size: 50px;
-  text-shadow: 5px 5px rgb(0, 0, 0);
-}
-
-.btn {
+.planet-btn {
   margin-top: 20px;
 }
 
-h4 {
-  color: #fff;
-}
-
-.subTitle {
-  color: #fff;
-  font-size: 40px;
-  margin-top: 50px;
-}
-
-.card {
+.planet-card {
   width: 20%;
   position: absolute;
   z-index: 1;
@@ -55,13 +35,10 @@ h4 {
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  [class*="card"] {
+  [class*="planet-card"] {
     
     position: relative;
     width: 100%;
     right: 9px;
   }
 }
-
-
-
