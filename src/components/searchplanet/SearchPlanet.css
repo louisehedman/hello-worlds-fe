@@ -8,10 +8,6 @@ body {
   text-shadow: 5px 5px rgb(0, 0, 0);
 }
 
-.card {
-  /* margin-top: 20px; */
-}
-
 .btn {
   margin-top: 20px;
 }
@@ -31,19 +27,41 @@ h4 {
   position: absolute;
   z-index: 1;
   top: 20px;
-  right: 150px;
-  /* background-color: #f3f2cf; */
-  background-color: #f5fffa;
+  right: 170px;
+  background-color: #d4c899;
 }
 
 .planetContainer {
-  opacity: 0.7;
+  opacity: 0.65;
   float: right;
   width: 45%;
   z-index: 1;
 }
 
 .searchedPlanet {
-  margin-top: 20px;
-  border-bottom: 3px solid black;
+  margin-top: 25px;
+  border-bottom: 2px solid black;
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="planetContainer"] {
+    
+    position: relative;
+    width: 100%;
+    white-space: pre-line;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="card"] {
+    
+    position: relative;
+    width: 100%;
+    right: 9px;
+  }
+}
+
+
+

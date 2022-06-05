@@ -41,7 +41,6 @@ const SearchPlanet: React.FC = () => {
               />
               {planets.map((planet: any) => {
                 if (
-                  // search.toLowerCase().includes(planet.name.toLowerCase())
                   planet.name.toLowerCase().startsWith(search) && search 
                 ) {
                   return (
