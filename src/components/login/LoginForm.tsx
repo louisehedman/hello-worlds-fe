@@ -13,8 +13,6 @@ const LoginForm: React.FC = () => {
   const [message, setMessage] = useState("");
   // User input variable
   const [state, setState] = useState<UserDetailsInterface>({
-    firstName: undefined,
-    username: undefined,
     email: undefined,
     password: undefined,
   });
