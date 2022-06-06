@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "../App";
+import { AuthContext } from "../auth/AuthProvider";
 import LoginForm from "../components/login/LoginForm";
 import RegisterForm from "../components/login/RegisterForm";
 
 const Login: React.FC = () => {
+  const auth = useContext(AuthContext);
   const [hasAccount, setHasAccount] = useState(true);
-  const navigate = useNavigate();
-
-  const { userId, setUserId } = useContext();
-
-  useEffect(() => {
-    if (userId) {
-      navigate("/");
-    }
-  }, [userId]);
-
   const toggleForm = () => {
     setHasAccount(hasAccount ? false : true);
   };
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (auth?.auth()) {
+      navigate(-1);
+    }
+  });
 
   return (
     <div className="container w-50 text-center text-white">
