@@ -4,6 +4,7 @@ import "./Slider.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../../reusable/urls";
+import toCelsius from "../../helpers/KelvinConverter";
 
 // AUTH, USERID AND ADDPLANET() ARE ONLY TEMPORARY
 
@@ -68,7 +69,7 @@ const PlanetSlider = () => {
                 </div>
                 <p className="text-white">
                   <span className="text-muted">Average Temperature: </span>
-                  {planet.avgTemp}°C
+                  {toCelsius(planet.avgTemp)}°C
                 </p>
                 <p className="textwhite">
                   <span className="text-muted">Distance from Earth: </span>

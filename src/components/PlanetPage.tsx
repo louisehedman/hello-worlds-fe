@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { PlanetInterface } from "../interfaces/interfaces";
 import { API_URL } from "../reusable/urls";
 import SuperAwesomeButton from "./SuperAwesomeButton";
+import toCelsius from "../helpers/KelvinConverter";
 
 
 export const PlanetPage = () => {
@@ -29,10 +30,9 @@ export const PlanetPage = () => {
     });
   };
 
-  function numberWithSpaces(nr: number | undefined) {
+  const numberWithSpaces = (nr: number | undefined) => {
     return nr?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
-
 
   useEffect(() => {
     getPlanet();
@@ -62,7 +62,7 @@ export const PlanetPage = () => {
           <div className="p-4">
             <div className="px-4">
               <h3>Temperature</h3>
-              <p>{planet?.avgTemp}</p>
+              <p>{toCelsius(planet?.avgTemp)}°C</p>
               <h3>Distance</h3>
               <p>{numberWithSpaces(planet?.earthDistance)} km</p>
             </div>
