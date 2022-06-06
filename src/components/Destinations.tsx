@@ -101,10 +101,10 @@ const Destinations: React.FC = () => {
             )}
           />
           <output style={{ marginBottom: "30px", float: "left" }}>
-            {tempValues[0] + " °"}
+            {tempValues[0] + " °K"}
           </output>
           <output style={{ marginBottom: "30px", float: "right" }}>
-            {tempValues[1] + " °"}
+            {tempValues[1] + " °K"}
           </output>
           <h3 className="card-subtitle mt-4 mb-3">Distance from Earth</h3>
           <Range
@@ -204,7 +204,7 @@ const Destinations: React.FC = () => {
                     }}
                   />
                   <p className="w-75 m-auto">{planet.shortDescription}</p>
-                  <p className="mt-3">Temperature: {planet.avgTemp}°</p>
+                  <p className="mt-3">Temperature: {planet.avgTemp}°K</p>
                   <p>Distance: {planet.earthDistance} km</p>
                   <Link to={"/planet/" + planet.name}>
                     <button className="p-1 mx-1 my-3 btn btn-success">
