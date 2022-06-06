@@ -12,8 +12,8 @@ const User: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!auth?.signedIn) {
-      navigate("/login");
+    if (!auth?.auth()) {
+      navigate("/");
     }
 
     fetch(API_URL("user"), {
