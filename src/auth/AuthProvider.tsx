@@ -4,9 +4,6 @@ import { API_URL } from "../reusable/urls";
 // Context interface
 interface AuthContextInterface {
   signedIn: boolean | undefined;
-  //   setSignedIn: React.Dispatch<React.SetStateAction<boolean | undefined>>;
-  //   userName: string | undefined;
-  //   setUserName: React.Dispatch<React.SetStateAction<string>>;
   handleLogin: (parameter: string) => void;
   handleLogout: () => void;
   auth: () => boolean;
@@ -18,7 +15,6 @@ export const AuthContext = createContext<AuthContextInterface | null>(null);
 const AuthProvider = ({ children }: any) => {
   // Define all variables and functions to be passed down to children
   const [signedIn, setSignedIn] = useState(false);
-  //   const [userName, setUserName] = useState("");
 
   useEffect(() => {
     const user = localStorage.getItem("signedIn");
@@ -63,8 +59,6 @@ const AuthProvider = ({ children }: any) => {
   // Gathers them in a variable we can pass as a value to the children
   const provider = {
     signedIn,
-    // userName,
-    // setUserName,
     handleLogin,
     handleLogout,
     auth,
