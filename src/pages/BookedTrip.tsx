@@ -65,64 +65,67 @@ const BookedTrip: React.FC = () => {
 
   return (
     <main className="container-sm">
-      <Link to={auth?.signedIn ? `/user` : "/"}>Back to user page</Link>
-      <h1 className="text-white">Trip to {planet?.name}</h1>
-      <section
-        className="container-sm rounded"
-        style={{ backgroundColor: "rgba(255, 255, 255, 0.65)" }}
-      >
-        <h2>{planet?.name} specs</h2>
+      <div className="float-end h3">
+        <Link to={auth?.signedIn ? `/user` : "/"}>Back to user page</Link>
+      </div>
+      <h1 className="text-center text-white mt-5 mb-3">Trip to {planet?.name}</h1>
+      <section className="container-sm rounded text-center bg-black bg-opacity-75 text-white">
+        <h2 className="text-warning">{planet?.name} specs</h2>
         <img
-          className="rounded"
+          className="rounded img-fluid"
           src={planet?.image}
           alt={planet?.name}
           style={{ width: "20rem" }}
         />
-        <p className="fs-5">
-          Number of moons:{" "}
-          <span className="fw-semibold">
-            {planet?.moons === null ? 0 : planet?.moons?.length}
-          </span>
-        </p>
-        <p className="fs-5">
-          Average Temperature:{" "}
-          <span className="fw-semibold">{planet?.avgTemp}</span>
-        </p>
-        <p className="fs-5">
-          Mass: <span className="fw-semibold">{planet?.mass.massValue}</span>
-        </p>
-        <p className="fs-5">
-          Gravity: <span className="fw-semibold">{planet?.grav}</span>
-        </p>
-        <p className="fs-5">
-          Radius: <span className="fw-semibold">{planet?.radius}</span>
-        </p>
-        <p className="fs-5">
-          Distance to earth:{" "}
-          <span className="fw-semibold">{planet?.earthDistance}</span>
-        </p>
-        <p className="fs-5">{planet?.shortDescription}</p>
+        <ul className="list-unstyled">
+          <li className="fs-5 my-1">
+            Number of moons: {" "}
+            <span className="fw-semibold">
+              {planet?.moons === null ? 0 : planet?.moons?.length}
+            </span>
+          </li>
+          <li className="fs-5 my-1">
+            Average Temperature: {" "}
+            <span className="fw-semibold">{planet?.avgTemp}°K</span>
+          </li>
+          <li className="fs-5 my-1">
+            Mass: <span className="fw-semibold">{planet?.mass.massValue}</span>
+          </li>
+          <li className="fs-5 my-1">
+            Gravity: <span className="fw-semibold">{planet?.grav}</span>
+          </li>
+          <li className="fs-5 my-1">
+            Radius: <span className="fw-semibold">{planet?.radius}</span>
+          </li>
+          <li className="fs-5 my-1">
+            Distance to earth: {" "}
+            <span className="fw-semibold">{planet?.earthDistance} km</span>
+          </li>
+          <li className="fs-5 my-1">{planet?.shortDescription}</li>
+        </ul>
       </section>
-      <section
-        className="container-sm rounded"
-        style={{ backgroundColor: "rgba(255, 255, 255, 0.65)" }}
-      >
-        <h2>Booking specs</h2>
-        <p className="fs-5">
-          <span className="fw-semibold">
-            {trip?.firstClass ? "First class" : "Economy"}
-          </span>
-        </p>
-        <p className="fs-5">
-          Number of passengers:{" "}
-          <span className="fw-semibold">{trip?.passengers}</span>
-        </p>
-        <p className="fs-5">
-          Seating preference: <span className="fw-semibold">{trip?.seat}</span>
-        </p>
-        <p className="fs-5">
-          Travel time: <span className="fw-semibold">{trip?.travTime}</span>
-        </p>
+      <section className="container-sm rounded text-center bg-black bg-opacity-75 text-white">
+        <h2 className="text-warning">Booking specs</h2>
+        <ul className="list-unstyled">
+          <li className="fs-5 my-1">
+            Class: {" "}
+            <span className="fw-semibold">
+              {trip?.firstClass ? "First class" : "Economy"}
+            </span>
+          </li>
+          <li className="fs-5 my-1">
+            Number of passengers: {" "}
+            <span className="fw-semibold">{trip?.passengers}</span>
+          </li>
+          <li className="fs-5 my-1">
+            Seating preference: {" "}
+            <span className="fw-semibold">{trip?.seat}</span>
+          </li>
+          <li className="fs-5 my-1">
+            Travel time: {" "}
+            <span className="fw-semibold">{trip?.travTime} days</span>
+          </li>
+        </ul>
       </section>
     </main>
   );

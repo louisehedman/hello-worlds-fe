@@ -14,15 +14,14 @@ const Trip: React.FC<Props> = ({ trip }) => {
   useEffect(() => {
     if (trip) {
       fetch(API_URL(GET_PLANET(trip.destination)), {
-        method: 'GET',
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json'
-        }, 
-        credentials: 'include',
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
       })
         .then((res) => res.json())
         .then((data) => {
-
           setPlanet({
             _id: data.planet._id,
             name: data.planet.name,
@@ -34,18 +33,19 @@ const Trip: React.FC<Props> = ({ trip }) => {
             earthDistance: data.planet.earthDistance,
             shortDescription: data.planet.shortDescription,
             description: data.planet.description,
-            image: data.planet.image
-          })
-        })
+            image: data.planet.image,
+          });
+        });
     }
   }, []);
 
   return (
     <Link to={`/booked-trip/${trip?._id}`}>
       <div
-        className="card rounded m-4"
+        className="card rounded text-center p-1 m-3 align-items-center bg-black bg-opacity-75 text-white"
         style={{
-          backgroundColor: "rgba(255, 255, 255, 0.65)",
+          height: "400px",
+          width: "auto",
         }}
       >
         <img
@@ -55,16 +55,13 @@ const Trip: React.FC<Props> = ({ trip }) => {
           style={{ width: "16rem" }}
         />
         <div className="card-body">
-          <h5 className="card-title text-dark">{planet?.name}</h5>
-          <p className="card-text text-dark d-inline">
-            {trip.passengers} passengers
-          </p>
-          <p
-            className="class-text text-dark d-inline"
-            style={{ marginLeft: "auto" }}
-          >
-            {trip.firstClass ? "First class" : "Economy"}
-          </p>
+          <h3 className="card-title text-warning">{planet?.name}</h3>
+          <ul className="list-unstyled">
+            <li className="h4">{trip.passengers} passengers</li>
+            <li className="h4">
+              {trip.firstClass ? "First class" : "Economy"}
+            </li>
+          </ul>
         </div>
       </div>
     </Link>
