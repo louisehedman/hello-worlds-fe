@@ -2,7 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# ![Logo](logo001.png)Hello World(s) - Business Idea
+# Hello World(s)
+
+## About this project
 
 This project is made by students at Chas Academy using MERN-stack. Users can book trips to different Planets. A visitor can read about different planets, but not be able to book. A user can register and create an account, and then login and logout. 
 
