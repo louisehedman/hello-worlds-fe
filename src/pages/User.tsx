@@ -1,35 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import TripList from "../components/TripList";
-import { API_URL, GET_USER } from "../reusable/urls";
-import { UserInterface } from '../interfaces/interfaces'
-import { useContext } from "../App";
-
+import { API_URL } from "../reusable/urls";
+import { UserInterface } from "../interfaces/interfaces";
+import { AuthContext } from "../auth/AuthProvider";
 
 const User: React.FC = () => {
+  const auth = useContext(AuthContext);
   const [user, setUser] = useState<UserInterface>();
-
-  const { userId, setUserId } = useContext();
 
   const navigate = useNavigate();
 
-
   useEffect(() => {
-    if (!userId) {
-      navigate("/login");
+    if (!auth?.auth()) {
+      navigate("/");
     }
 
-    fetch(API_URL(GET_USER(userId)), {
-      method: 'GET',
+    fetch(API_URL("user"), {
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json'
-      }, 
-      credentials: 'include',
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
     })
       .then((res) => res.json())
       .then((data) => {
-        
         if (data.success) {
           setUser({
             _id: data.user._id,
@@ -40,8 +35,7 @@ const User: React.FC = () => {
             tripList: data.user.tripList,
           });
         }
-      })
-  
+      });
   }, []);
 
   return (
@@ -49,7 +43,7 @@ const User: React.FC = () => {
       <section>
         <h1>{user?.firstName}</h1>
       </section>
-      <TripList tripList={user?.tripList}/>
+      <TripList tripList={user?.tripList} />
     </main>
   );
 };

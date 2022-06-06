@@ -1,47 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import { PlanetInterface, TripInterface } from "../interfaces/interfaces";
 import { API_URL, GET_TRIP, GET_PLANET } from "../reusable/urls";
-import { useContext } from "../App";
+import { AuthContext } from "../auth/AuthProvider";
 
 const BookedTrip: React.FC = () => {
+  const auth = useContext(AuthContext);
   const { tripId } = useParams();
 
-  const { userId, setUserId } = useContext();
+  // const { userId, setUserId } = useContext();
 
   const [trip, setTrip] = useState<TripInterface>();
   const [planet, setPlanet] = useState<PlanetInterface>();
 
   useEffect(() => {
-    fetch(API_URL(GET_TRIP(userId, tripId)), {
-      method: 'GET',
+    fetch(API_URL(GET_TRIP(tripId)), {
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json'
-      }, 
-      credentials: 'include',
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
     })
-    .then((res) => res.json())
-    .then((data) => {
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setTrip({
+            _id: data.trip._id,
+            destination: data.trip.destination,
+            travTime: data.trip.travTime,
+            passengers: data.trip.passengers,
+            seat: data.trip.seat,
+            firstClass: data.trip.firstClass,
+            createdAt: data.trip.createdAt,
+          });
 
-      if (data.success) {
-        setTrip({
-          _id: data.trip._id,
-          destination: data.trip.destination,
-          travTime: data.trip.travTime,
-          passengers: data.trip.passengers,
-          seat: data.trip.seat,
-          firstClass: data.trip.firstClass,
-          createdAt: data.trip.createdAt,
-        });
-  
-        getPlanet(data.trip.destination);
-      }
-
-    });
-    
+          getPlanet(data.trip.destination);
+        }
+      });
   }, []);
 
   const getPlanet = (planetId: string) => {
@@ -67,7 +65,7 @@ const BookedTrip: React.FC = () => {
 
   return (
     <main className="container-sm">
-      <Link to={userId ? `/user/${userId}` : "/"}>Back to user page</Link>
+      <Link to={auth?.signedIn ? `/user` : "/"}>Back to user page</Link>
       <h1 className="text-white">Trip to {planet?.name}</h1>
       <section
         className="container-sm rounded"
@@ -82,7 +80,9 @@ const BookedTrip: React.FC = () => {
         />
         <p className="fs-5">
           Number of moons:{" "}
-          <span className="fw-semibold">{planet?.moons === null ? 0 : planet?.moons?.length}</span>
+          <span className="fw-semibold">
+            {planet?.moons === null ? 0 : planet?.moons?.length}
+          </span>
         </p>
         <p className="fs-5">
           Average Temperature:{" "}

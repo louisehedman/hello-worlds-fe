@@ -1,13 +1,12 @@
-import React from "react";
-import "./Header.css";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../auth/AuthProvider";
+import "./Header.css";
 import SearchPlanet from "../searchplanet/SearchPlanet";
 
-interface Props {
-  userId: string | undefined;
-}
+export const Header: React.FC = () => {
+  const auth = useContext(AuthContext);
 
-export const Header: React.FC<Props> = ({ userId }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark relative-top m-0 bg-opacity-75">
       <div className="container-fluid">
@@ -37,7 +36,11 @@ export const Header: React.FC<Props> = ({ userId }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="destinations" style={{ color: "white" }}>
+              <Link
+                className="nav-link"
+                to="destinations"
+                style={{ color: "white" }}
+              >
                 Destinations
               </Link>
             </li>
@@ -49,7 +52,7 @@ export const Header: React.FC<Props> = ({ userId }) => {
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                to={userId ? `/user/${userId}` : "/"}
+                to={auth?.signedIn ? `/user` : "/"}
                 style={{ color: "white" }}
                 id="navbarDropdown"
                 role="button"
@@ -67,12 +70,12 @@ export const Header: React.FC<Props> = ({ userId }) => {
                   opacity: 0.9,
                 }}
               >
-                {userId ? (
+                {auth?.signedIn ? (
                   <>
                     <li>
                       <Link
                         className="dropdown-item"
-                        to={userId ? `/user/${userId}` : "/"}
+                        to={auth?.signedIn ? `/user` : "/"}
                         style={{ color: "white" }}
                       >
                         My trips
@@ -81,8 +84,9 @@ export const Header: React.FC<Props> = ({ userId }) => {
                     <li>
                       <Link
                         className="dropdown-item"
-                        to="/logout"
+                        to="/"
                         style={{ color: "white" }}
+                        onClick={auth.handleLogout}
                       >
                         Logout
                       </Link>
