@@ -1,14 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { API_URL } from "../reusable/urls";
 
 // Context interface
 interface AuthContextInterface {
   signedIn: boolean | undefined;
   //   setSignedIn: React.Dispatch<React.SetStateAction<boolean | undefined>>;
-  userName: string | undefined;
-  setUserName: React.Dispatch<React.SetStateAction<string>>;
+  //   userName: string | undefined;
+  //   setUserName: React.Dispatch<React.SetStateAction<string>>;
   handleLogin: (parameter: string) => void;
   handleLogout: () => void;
+  auth: () => boolean;
 }
 
 // Create the context
@@ -17,11 +18,26 @@ export const AuthContext = createContext<AuthContextInterface | null>(null);
 const AuthProvider = ({ children }: any) => {
   // Define all variables and functions to be passed down to children
   const [signedIn, setSignedIn] = useState(false);
-  const [userName, setUserName] = useState("");
+  //   const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    const user = localStorage.getItem("signedIn");
+    if (user === "true") {
+      setSignedIn(true);
+    }
+  }, []);
+
+  const auth = () => {
+    if (localStorage.getItem("signedIn")) {
+      return true;
+    }
+    return false;
+  };
 
   const handleLogin = (username: string) => {
     setSignedIn(true);
-    setUserName(username);
+    localStorage.setItem("signedIn", "true");
+    localStorage.setItem("username", username);
   };
 
   const handleLogout = async () => {
@@ -36,7 +52,8 @@ const AuthProvider = ({ children }: any) => {
         .then((res) => res.json())
         .then(() => {
           setSignedIn(false);
-          setUserName("");
+          localStorage.removeItem("signedIn");
+          localStorage.removeItem("username");
         });
     } catch (err) {
       console.log(err);
@@ -46,10 +63,11 @@ const AuthProvider = ({ children }: any) => {
   // Gathers them in a variable we can pass as a value to the children
   const provider = {
     signedIn,
-    userName,
-    setUserName,
+    // userName,
+    // setUserName,
     handleLogin,
     handleLogout,
+    auth,
   };
 
   return (
