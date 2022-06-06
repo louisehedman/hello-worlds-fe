@@ -4,7 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # ![Logo](logo001.png)Hello World(s) - Business Idea
 
-We made a fullstack app where users can book trips to different Planets. A visitor can read about different planets, but not be able to book. A user can register and create an account, and then login and logout. Only logged in users can book trips. Also only logged in users can do CRUD and create its own lists. A user can filter planets according to its own preference such as: distance, temperature etc. And a user can search for a planet to read briefly about it and things to do on the Planet. 
+This project is made by students at Chas Academy using MERN-stack. Users can book trips to different Planets. A visitor can read about different planets, but not be able to book. A user can register and create an account, and then login and logout. 
+
+Only logged in users can book trips. Also only logged in users can do CRUD and create its own lists. A user can filter planets according to its own preference such as: distance, temperature etc. And a user can search for a planet to read briefly about it and things to do on the Planet. 
+
 ## 🚀Authors
 
 - Nova Boman [@NovaBoman](https://www.github.com/NovaBoman)
@@ -18,7 +21,7 @@ We made a fullstack app where users can book trips to different Planets. A visit
 
 ## Tech Stack
 **Client:** React, TypeScript, Bootstrap
-**Server:** Node, Express, Mongoose, MongoDB
+**Server:** Node, Express, Mongoose, MongoDB, Nodemon
 
 
 ## Compitability
@@ -30,6 +33,15 @@ We made a fullstack app where users can book trips to different Planets. A visit
 To run this project, you will need to add the following environment variables to your .env file
 
 `REACT_APP_API_URL`
+
+## Deployment
+
+[Visit the App](http://helloworldstraveling.netlify.app/)
+
+## Documentation
+[Project idea](https://docs.google.com/document/d/1AVMP5OK2YgBT46wpgyHdWCBFURYMoxQrOBpvsFkTcWw/edit)
+[Distance and travel time to planets in km](https://docs.google.com/document/d/1_nzSHf9VF5jQHNZj9Hmg9MX6-erocGOc4tKCi8uWee4/edit)
+[General planet info](https://docs.google.com/document/d/1anX7E3fgoCfaRA1R6C05wGHyl_LD8MSEU-Xx3Q2dnew/edit#heading=h.2x0dpo8906gg)
 
 ## Support
 
