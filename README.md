@@ -2,6 +2,43 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# ![Logo](logo001.png)Hello World(s) - Business Idea
+
+We made a fullstack app where users can book trips to different Planets. A visitor can read about different planets, but not be able to book. A user can register and create an account, and then login and logout. Only logged in users can book trips. Also only logged in users can do CRUD and create its own lists. A user can filter planets according to its own preference such as: distance, temperature etc. And a user can search for a planet to read briefly about it and things to do on the Planet. 
+## 🚀Authors
+
+- Nova Boman [@NovaBoman](https://www.github.com/NovaBoman)
+- Sandra Wallén [@sandra-wallen](https://www.github.com/sandra-wallen)
+- Simon Miller [@simomill](https://www.github.com/simomill)
+- Louise Hedman [@louisehedman](https://www.github.com/louisehedman)
+- Paulina Eriksson [@paulinaeriksson](https://www.github.com/paulinaeriksson)
+- Onur Kayhan [@onurkayhann](https://www.github.com/onurkayhann)
+- Alisher Yuldashev [@baldazay](https://www.github.com/baldazay)
+- Simon Denito [@simden124](https://www.github.com/simden124)
+
+## Tech Stack
+**Client:** React, TypeScript, Bootstrap
+**Server:** Node, Express, Mongoose, MongoDB
+
+
+## Compitability
+- Laptop devices
+- Mobile devices
+
+## Environment Variables 
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`REACT_APP_API_URL`
+
+## Support
+
+For support, email helloworlds2022@gmail.com or join our Slack channel.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -13,6 +50,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
 
 ### `npm test`
 
