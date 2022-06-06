@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import App from "./App";
-import Login from "./components/login/Login";
+import Login from "./pages/Login";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import User from "./pages/User";
@@ -16,7 +16,6 @@ import BookedTrip from "./pages/BookedTrip";
 import { PlanetPage } from "./components/PlanetPage";
 import BlogPage from "./pages/blogpage";
 import Destinations from "./components/Destinations";
-import Logout from "./components/logout/Logout";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -27,14 +26,14 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="/" element={<Home />} />
+
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/user/:id" element={<User />} />
-        <Route path="/booked-trip/:tripId" element={<BookedTrip />} />
-        <Route path="/planet/:slug" element={<PlanetPage />} />
         <Route path="/blogs/:id" element={<BlogPage />} />
         <Route path="destinations" element={<Destinations />}></Route>
-        <Route path="/about" element={<About />} />
+        <Route path="/planet/:slug" element={<PlanetPage />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/booked-trip/:tripId" element={<BookedTrip />} />
       </Route>
     </Routes>
   </BrowserRouter>
