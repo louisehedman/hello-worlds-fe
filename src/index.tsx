@@ -15,6 +15,7 @@ import User from "./pages/User";
 import BookedTrip from "./pages/BookedTrip";
 import { PlanetPage } from "./components/PlanetPage";
 import BlogPage from "./pages/blogpage";
+import Destinations from "./components/Destinations";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -25,9 +26,11 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="/" element={<Home />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/blogs/:id" element={<BlogPage />} />
+        <Route path="destinations" element={<Destinations />}></Route>
         <Route path="/planet/:slug" element={<PlanetPage />} />
         <Route path="/user" element={<User />} />
         <Route path="/booked-trip/:tripId" element={<BookedTrip />} />

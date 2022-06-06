@@ -1,0 +1,44 @@
+.planet-btn {
+  margin-top: 20px;
+}
+
+.planet-card {
+  width: 20%;
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 170px;
+  background-color: #d4c899;
+}
+
+.planetContainer {
+  opacity: 0.65;
+  float: right;
+  width: 45%;
+  z-index: 1;
+}
+
+.searchedPlanet {
+  margin-top: 25px;
+  border-bottom: 2px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="planetContainer"] {
+    
+    position: relative;
+    width: 100%;
+    white-space: pre-line;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="planet-card"] {
+    
+    position: relative;
+    width: 100%;
+    right: 9px;
+  }
+}

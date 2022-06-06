@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../auth/AuthProvider";
-
 import "./Header.css";
+import SearchPlanet from "../searchplanet/SearchPlanet";
 
 export const Header: React.FC = () => {
   const auth = useContext(AuthContext);
@@ -36,7 +36,11 @@ export const Header: React.FC = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/" style={{ color: "white" }}>
+              <Link
+                className="nav-link"
+                to="destinations"
+                style={{ color: "white" }}
+              >
                 Destinations
               </Link>
             </li>
@@ -102,21 +106,7 @@ export const Header: React.FC = () => {
               </ul>
             </li>
           </ul>
-          <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-              className="btn btn-outline-light"
-              style={{ color: "white", backgroundColor: "none" }}
-              type="submit"
-            >
-              Search
-            </button>
-          </form>
+          <SearchPlanet />
         </div>
       </div>
     </nav>
