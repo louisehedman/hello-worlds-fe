@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { TripInterface } from "../interfaces/interfaces";
-import { API_URL, CREATE_TRIP } from "../reusable/urls";
+import { API_URL } from "../reusable/urls";
 import { Props } from "./SuperAwesomeButton";
-import { useContext } from "../App";
 
 const BookingForm: React.FC<Props> = ({
   destination,
@@ -18,8 +17,6 @@ const BookingForm: React.FC<Props> = ({
     travTime: undefined,
     firstClass: true,
   });
-
-  const { userId, setUserId } = useContext();
 
   useEffect(() => {
     setState({
@@ -71,9 +68,7 @@ const BookingForm: React.FC<Props> = ({
     <>
       <form
         className="w-90 m-auto"
-        onSubmit={(e) =>
-          handleSubmit(e, API_URL(CREATE_TRIP(userId)))
-        }
+        onSubmit={(e) => handleSubmit(e, API_URL("create-trip"))}
       >
         <div className="form-group">
           <label htmlFor="passengers">Number of passengers:</label>
