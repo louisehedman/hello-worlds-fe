@@ -24,13 +24,13 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route path="/user" element={<User />} />
-        <Route path="/booked-trip/:tripId" element={<BookedTrip />} />
-        <Route path="/planet/:slug" element={<PlanetPage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/blogs/:id" element={<BlogPage />} />
         <Route path="/planet/:slug" element={<PlanetPage />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/booked-trip/:tripId" element={<BookedTrip />} />
       </Route>
     </Routes>
   </BrowserRouter>
