@@ -5,9 +5,11 @@ import { PlanetInterface } from "../interfaces/interfaces";
 import { API_URL } from "../reusable/urls";
 import SuperAwesomeButton from "./SuperAwesomeButton";
 
+
 export const PlanetPage = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
   let { slug } = useParams();
+
 
   const getPlanet = async () => {
     await axios.get(API_URL(`planets/${slug}`)).then((res) => {
@@ -26,6 +28,11 @@ export const PlanetPage = () => {
       });
     });
   };
+
+  function numberWithSpaces(nr: number | undefined) {
+    return nr?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+
 
   useEffect(() => {
     getPlanet();
@@ -57,7 +64,7 @@ export const PlanetPage = () => {
               <h3>Temperature</h3>
               <p>{planet?.avgTemp}</p>
               <h3>Distance</h3>
-              <p>{planet?.earthDistance}</p>
+              <p>{numberWithSpaces(planet?.earthDistance)} km</p>
             </div>
           </div>
         </div>
