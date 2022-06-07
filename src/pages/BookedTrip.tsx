@@ -72,14 +72,14 @@ const BookedTrip: React.FC = () => {
       </div>
       <h1 className="text-center text-white mt-5 mb-3">Trip to {planet?.name}</h1>
       <section className="container-sm rounded text-center bg-black bg-opacity-75 text-white">
-        <h2 className="text-warning">{planet?.name} specs</h2>
+        <h2 className="text-warning pt-2">{planet?.name} specs</h2>
         <img
           className="rounded img-fluid"
           src={planet?.image}
           alt={planet?.name}
           style={{ width: "20rem" }}
         />
-        <ul className="list-unstyled">
+        <ul className="list-unstyled pb-3">
           <li className="fs-5 my-1">
             Number of moons: {" "}
             <span className="fw-semibold">
@@ -107,8 +107,8 @@ const BookedTrip: React.FC = () => {
         </ul>
       </section>
       <section className="container-sm rounded text-center bg-black bg-opacity-75 text-white">
-        <h2 className="text-warning">Booking specs</h2>
-        <ul className="list-unstyled">
+        <h2 className="text-warning pt-2">Booking specs</h2>
+        <ul className="list-unstyled pb-3">
           <li className="fs-5 my-1">
             Class: {" "}
             <span className="fw-semibold">
