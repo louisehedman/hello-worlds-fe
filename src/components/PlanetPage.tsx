@@ -38,8 +38,8 @@ export const PlanetPage = () => {
 
   return (
     <div>
-      <div className="container text-center rounded w-100 mb-4 px-4 pb-4 py-4 ">
-        <div className="bg-black border border-white p-4 mb-4">
+      <div className="container  rounded w-100 mb-4 px-4 pb-4 py-4 ">
+        <div className="bg-black border border-white p-4 mb-4 text-center">
           <div className="bg-black d-flex align-items-baseline justify-content-around">
             <h2 className="text-left text-white d-inline">{planet?.name}</h2>
             <SuperAwesomeButton
