@@ -77,10 +77,10 @@ const RegisterForm: React.FC = () => {
 
   return (
     <div className="my-5">
-      <h2 className="text-white text-center">Register</h2>
+      <h2 className="text-reset text-center">Register</h2>
       <p
         ref={messageRef}
-        className="text-white text-center"
+        className="text-reset text-center"
         style={!message ? { visibility: "hidden" } : { visibility: "visible" }}
       >
         {message}
@@ -91,7 +91,7 @@ const RegisterForm: React.FC = () => {
         onSubmit={(e) => handleSubmit(e, API_URL("register"))}
       >
         <div className="form-group">
-          <label className="text-white">First name:</label>
+          <label className="text-reset">First name:</label>
           <input
             ref={firstNameRef}
             className="form-control my-3"
@@ -101,7 +101,7 @@ const RegisterForm: React.FC = () => {
             onChange={handleChange}
             required
           />
-          <label className="text-white">Username:</label>
+          <label className="text-reset">Username:</label>
           <input
             className="form-control my-3"
             type="text"
@@ -110,7 +110,7 @@ const RegisterForm: React.FC = () => {
             onChange={handleChange}
             required
           />
-          <label className="text-white">Email:</label>
+          <label className="text-reset">Email:</label>
           <input
             ref={emailRef}
             className="form-control my-3"
@@ -120,7 +120,7 @@ const RegisterForm: React.FC = () => {
             onChange={handleChange}
             required
           />
-          <label className="text-white">Password:</label>
+          <label className="text-reset">Password:</label>
           <input
             ref={pwdRef}
             className="form-control my-3"
