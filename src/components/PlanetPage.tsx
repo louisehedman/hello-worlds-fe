@@ -40,15 +40,14 @@ export const PlanetPage = () => {
     <div>
       <div className="container px-4 pt-4 rounded w-100 mb-4 px-4 pb-4 py-4">
         <div className="text-center mb-4 py-4 bg-black bg-opacity-80 border border-white rounded text-white">
-          
           <div className="d-flex align-items-baseline justify-content-around">
-          <h2 className="text-left text-white d-inline">{planet?.name}</h2>
-          <SuperAwesomeButton
-            destination={planet?._id}
-            distanceToEarth={planet?.earthDistance}
-            planetName={planet?.name}
-          />
-        </div>
+            <h2 className="text-left text-white d-inline">{planet?.name}</h2>
+            <SuperAwesomeButton
+              destination={planet?._id}
+              distanceToEarth={planet?.earthDistance}
+              planetName={planet?.name}
+            />
+          </div>
           <img
             className="mx-auto d-block img-fluid"
             src={`${planet?.image}`}
@@ -62,12 +61,14 @@ export const PlanetPage = () => {
           <h3 className="text-white text-muted">Average temperature</h3>
           <p className="text-white">{toCelsius(planet?.avgTemp)}°C</p>
           <h3 className="text-white text-muted">Distance from Earth</h3>
-          <p className="text-white">{numberWithSpaces(planet?.earthDistance)} km</p>
+          <p className="text-white">
+            {numberWithSpaces(planet?.earthDistance)} km
+          </p>
         </div>
-      <div className="container px-4 pb-4 py-4 text-left bg-black bg-opacity-75 border border-gray rounded text-white shadow-lg">
-        <h3 className="text-center">Description</h3>
-        <p>{planet?.description}</p>
-      </div>
+        <div className="container px-4 pb-4 py-4 text-left bg-black bg-opacity-75 border border-gray rounded text-white shadow-lg">
+          <h3 className="text-center">Description</h3>
+          <p>{planet?.description}</p>
+        </div>
       </div>
     </div>
   );
