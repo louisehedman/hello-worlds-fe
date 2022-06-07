@@ -6,11 +6,9 @@ import { API_URL } from "../reusable/urls";
 import SuperAwesomeButton from "./SuperAwesomeButton";
 import toCelsius from "../helpers/KelvinConverter";
 
-
 export const PlanetPage = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
   let { slug } = useParams();
-
 
   const getPlanet = async () => {
     await axios.get(API_URL(`planets/${slug}`)).then((res) => {
@@ -32,7 +30,7 @@ export const PlanetPage = () => {
 
   const numberWithSpaces = (nr: number | undefined) => {
     return nr?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  }
+  };
 
   useEffect(() => {
     getPlanet();
@@ -40,41 +38,35 @@ export const PlanetPage = () => {
 
   return (
     <div>
-      <div className="container px-4 pt-4 bg-dark">
-        <div className="d-flex align-items-baseline justify-content-around">
-          <h2 className="text-left text-white d-inline">{planet?.name}</h2>
-          <SuperAwesomeButton
-            destination={planet?._id}
-            distanceToEarth={planet?.earthDistance}
-            planetName={planet?.name}
-          />
-        </div>
-        <img
-          className="mx-auto d-block img-fluid"
-          src={`${planet?.image}`}
-          width="20px"
-          style={{
-            width: "auto",
-            height: "250px",
-          }}
-        />
-        <div className="text-center py-4 bg-white bg-opacity-10 border border-gray rounded text-white h-100 shadow-lg">
-          <div className="p-4">
-            <div className="px-4">
-              <h3>Temperature</h3>
-              <p>{toCelsius(planet?.avgTemp)}°C</p>
-              <h3>Distance</h3>
-              <p>{numberWithSpaces(planet?.earthDistance)} km</p>
-            </div>
+      <div className="container text-center rounded w-100 mb-4 px-4 pb-4 py-4 ">
+        <div className="bg-black border border-white p-4 mb-4">
+          <div className="bg-black d-flex align-items-baseline justify-content-around">
+            <h2 className="text-left text-white d-inline">{planet?.name}</h2>
+            <SuperAwesomeButton
+              destination={planet?._id}
+              distanceToEarth={planet?.earthDistance}
+              planetName={planet?.name}
+            />
           </div>
+          <img
+            className="mx-auto d-block img-fluid"
+            src={`${planet?.image}`}
+            width="20px"
+            style={{
+              width: "auto",
+              height: "250px",
+            }}
+          />
+
+          <h3 className="text-white text-muted">Average temperature</h3>
+          <p className="text-white">{toCelsius(planet?.avgTemp)}°C</p>
+          <h3 className="text-white text-muted">Distance from Earth</h3>
+          <p className="text-white">{numberWithSpaces(planet?.earthDistance)} km</p>
         </div>
-        <div className="container px-4 pb-4 text-left py-4 bg-white bg-opacity-10 border border-gray rounded text-white h-100 shadow-lg">
-          <h3 className="text-center">Description</h3>
-          <p>{planet?.description}</p>
-        </div>
-        <div>
-          <p></p>
-        </div>
+      <div className="container px-4 pb-4 py-4 text-left bg-black bg-opacity-75 border border-gray rounded text-white shadow-lg">
+        <h3 className="text-center">Description</h3>
+        <p>{planet?.description}</p>
+      </div>
       </div>
     </div>
   );
