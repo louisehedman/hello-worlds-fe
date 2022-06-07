@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { PlanetInterface, TripInterface } from "../interfaces/interfaces";
 import { API_URL, GET_TRIP, GET_PLANET } from "../reusable/urls";
 import { AuthContext } from "../auth/AuthProvider";
+import toCelsius from "../helpers/KelvinConverter";
+
 
 const BookedTrip: React.FC = () => {
   const auth = useContext(AuthContext);
@@ -86,7 +88,7 @@ const BookedTrip: React.FC = () => {
           </li>
           <li className="fs-5 my-1">
             Average Temperature: {" "}
-            <span className="fw-semibold">{planet?.avgTemp}°K</span>
+            <span className="fw-semibold">{toCelsius(planet?.avgTemp)} °C</span>
           </li>
           <li className="fs-5 my-1">
             Mass: <span className="fw-semibold">{planet?.mass.massValue}</span>
