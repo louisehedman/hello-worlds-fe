@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../auth/AuthProvider";
+import Login from "../pages/Login";
 import BookingForm from "./BookingForm";
 
 export interface Props {
@@ -13,6 +15,7 @@ const SuperAwesomeButton: React.FC<Props> = ({
   distanceToEarth,
   planetName,
 }) => {
+  const auth = useContext(AuthContext);
   const [applicationSent, setApplicationSent] = useState(false);
 
   return (
@@ -37,7 +40,9 @@ const SuperAwesomeButton: React.FC<Props> = ({
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Take me to {planetName}!
+                {!auth?.auth()
+                  ? "Sign in or register"
+                  : `Take me to ${planetName}!`}
               </h5>
               <button
                 type="button"
@@ -47,7 +52,9 @@ const SuperAwesomeButton: React.FC<Props> = ({
               ></button>
             </div>
             <div className="modal-body">
-              {destination && distanceToEarth ? (
+              {!auth?.auth() ? (
+                <Login color={"text-black"} />
+              ) : destination && distanceToEarth ? (
                 !applicationSent ? (
                   <BookingForm
                     destination={destination}

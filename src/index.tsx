@@ -28,7 +28,7 @@ root.render(
         <Route path="/" element={<Home />} />
 
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login color={"text-white"} />} />
         <Route path="/blogs/:id" element={<BlogPage />} />
         <Route path="destinations" element={<Destinations />}></Route>
         <Route path="/planet/:slug" element={<PlanetPage />} />
