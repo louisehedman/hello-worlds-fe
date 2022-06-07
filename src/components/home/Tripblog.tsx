@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Pagination } from "./pagination";
+import { Pagination } from "./Pagination";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../reusable/urls";
 
@@ -18,7 +18,7 @@ function TripBlog() {
       } catch (error) {
         console.log(error);
       }
-    }
+    };
     fetchBlogs();
   }, []);
 
@@ -41,7 +41,8 @@ function TripBlog() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
 
-  const paginate = (pageNumber: React.SetStateAction<number>) => setCurrentPage(pageNumber)
+  const paginate = (pageNumber: React.SetStateAction<number>) =>
+    setCurrentPage(pageNumber);
 
   return (
     <div className="container px-4 pb-4">
@@ -52,7 +53,7 @@ function TripBlog() {
           return (
             <div key={index} className="p-4 ">
               <div className="px-4">
-              <p>{blog.date}</p>
+                <p>{blog.date}</p>
                 <h3>{blog.title}</h3>
                 <p>{getExcerpt(blog.body)}</p>
                 {/* <p>{blog.body}</p> */}
@@ -66,9 +67,13 @@ function TripBlog() {
             </div>
           );
         })}
-        
+
         <div className="d-flex justify-content-center">
-        <Pagination postsPerPage={postsPerPage} totalPosts={blogs.length} paginate={paginate} />
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={blogs.length}
+            paginate={paginate}
+          />
         </div>
       </div>
     </div>

@@ -9,13 +9,13 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import App from "./App";
 import Login from "./pages/Login";
-import Home from "./components/home/Home";
+import Home from "./pages/Home";
 import About from "./components/about/About";
 import User from "./pages/User";
 import BookedTrip from "./pages/BookedTrip";
-import { PlanetPage } from "./components/PlanetPage";
-import BlogPage from "./pages/blogpage";
-import Destinations from "./components/Destinations";
+import { PlanetPage } from "./pages/PlanetPage";
+import BlogPage from "./pages/Blogpage";
+import Destinations from "./pages/Destinations";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

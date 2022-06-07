@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../auth/AuthProvider";
 import "./Header.css";
-import SearchPlanet from "../searchplanet/SearchPlanet";
+import SearchPlanet from "../searchPlanet/SearchPlanet";
 
 export const Header: React.FC = () => {
   const auth = useContext(AuthContext);

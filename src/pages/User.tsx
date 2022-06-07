@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TripList from "../components/TripList";
+import TripList from "../components/user/TripList";
 import { API_URL } from "../reusable/urls";
 import { UserInterface } from "../interfaces/interfaces";
 import { AuthContext } from "../auth/AuthProvider";

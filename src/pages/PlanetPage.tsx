@@ -3,14 +3,12 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { PlanetInterface } from "../interfaces/interfaces";
 import { API_URL } from "../reusable/urls";
-import SuperAwesomeButton from "./SuperAwesomeButton";
+import SuperAwesomeButton from "../components/SuperAwesomeButton";
 import toCelsius from "../helpers/KelvinConverter";
-
 
 export const PlanetPage = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
   let { slug } = useParams();
-
 
   const getPlanet = async () => {
     await axios.get(API_URL(`planets/${slug}`)).then((res) => {
@@ -32,7 +30,7 @@ export const PlanetPage = () => {
 
   const numberWithSpaces = (nr: number | undefined) => {
     return nr?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  }
+  };
 
   useEffect(() => {
     getPlanet();

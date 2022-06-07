@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { API_URL, GET_PLANET } from "../reusable/urls";
-import { TripInterface, PlanetInterface } from "../interfaces/interfaces";
+import { API_URL, GET_PLANET } from "../../reusable/urls";
+import { TripInterface, PlanetInterface } from "../../interfaces/interfaces";
 
 interface Props {
   trip: TripInterface;
@@ -14,15 +14,14 @@ const Trip: React.FC<Props> = ({ trip }) => {
   useEffect(() => {
     if (trip) {
       fetch(API_URL(GET_PLANET(trip.destination)), {
-        method: 'GET',
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json'
-        }, 
-        credentials: 'include',
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
       })
         .then((res) => res.json())
         .then((data) => {
-
           setPlanet({
             _id: data.planet._id,
             name: data.planet.name,
@@ -34,9 +33,9 @@ const Trip: React.FC<Props> = ({ trip }) => {
             earthDistance: data.planet.earthDistance,
             shortDescription: data.planet.shortDescription,
             description: data.planet.description,
-            image: data.planet.image
-          })
-        })
+            image: data.planet.image,
+          });
+        });
     }
   }, []);
 
