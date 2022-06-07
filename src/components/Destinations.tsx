@@ -196,7 +196,7 @@ const Destinations: React.FC = () => {
                   <h3>{planet.name}</h3>
                   <img
                     className="img-fluid"
-                    src={planet.image}
+                    src={`/images/${planet.name}.jpg`}
                     alt={"picture of " + planet.name}
                     width="10px"
                     style={{

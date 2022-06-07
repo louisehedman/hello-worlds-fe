@@ -75,7 +75,7 @@ const BookedTrip: React.FC = () => {
         <h2 className="text-warning pt-2">{planet?.name} specs</h2>
         <img
           className="rounded img-fluid"
-          src={planet?.image}
+          src={`/images/${planet?.name}.jpg`}
           alt={planet?.name}
           style={{ width: "20rem" }}
         />

@@ -41,7 +41,7 @@ const PlanetSlider = () => {
               interval={5000}
             >
               <img
-                src={planet.image}
+                src={`/images/${planet.name}.jpg`}
                 alt={"slide" + index}
                 width="10px"
                 style={{

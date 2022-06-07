@@ -38,16 +38,17 @@ export const PlanetPage = () => {
 
   return (
     <div>
-      <div className="container  rounded w-100 mb-4 px-4 pb-4 py-4 ">
-        <div className="bg-black border border-white p-4 mb-4 text-center">
-          <div className="bg-black d-flex align-items-baseline justify-content-around">
-            <h2 className="text-left text-white d-inline">{planet?.name}</h2>
-            <SuperAwesomeButton
-              destination={planet?._id}
-              distanceToEarth={planet?.earthDistance}
-              planetName={planet?.name}
-            />
-          </div>
+      <div className="container px-4 pt-4 rounded w-100 mb-4 px-4 pb-4 py-4">
+        <div className="text-center mb-4 py-4 bg-black bg-opacity-80 border border-white rounded text-white">
+          
+          <div className="d-flex align-items-baseline justify-content-around">
+          <h2 className="text-left text-white d-inline">{planet?.name}</h2>
+          <SuperAwesomeButton
+            destination={planet?._id}
+            distanceToEarth={planet?.earthDistance}
+            planetName={planet?.name}
+          />
+        </div>
           <img
             className="mx-auto d-block img-fluid"
             src={`${planet?.image}`}
