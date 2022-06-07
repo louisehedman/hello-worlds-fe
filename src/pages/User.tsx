@@ -39,9 +39,9 @@ const User: React.FC = () => {
   }, []);
 
   return (
-    <main className="d-flex flex-column align-items-center text-white">
+    <main className="container d-flex flex-column align-items-center text-white">
       <section>
-        <h1>{user?.firstName}</h1>
+        <h1 className="my-3">Hi {user?.firstName}!</h1>
       </section>
       <TripList tripList={user?.tripList} />
     </main>
