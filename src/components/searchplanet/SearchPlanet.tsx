@@ -4,13 +4,20 @@ import { API_URL } from "../../reusable/urls";
 import { Link } from "react-router-dom";
 import "./SearchPlanet.css";
 
+// Search planet
 const SearchPlanet: React.FC = () => {
   const [planets, setPlanets] = useState([]);
   const [search, setSearch]: [string, (search: string) => void] = useState("");
 
+  // String formatter
   const handleChange = (e: { target: { value: string } }) => {
     const formatString = e.target.value.toLowerCase();
     setSearch(formatString);
+  };
+
+  // Clear the input field
+  const resetInputField = () => {
+    setSearch("");
   };
 
   useEffect(() => {
@@ -48,7 +55,7 @@ const SearchPlanet: React.FC = () => {
                       <h3>{planet.name}</h3>
                       <p>{planet.shortDescription}</p>
                       <Link to={"/planet/" + planet.name}>
-                        <button className="p-1 mx-1 my-3 btn planet-btn btn-outline-success">
+                        <button onClick={resetInputField} className="p-1 mx-1 my-3 btn planet-btn btn-outline-success">
                           Find out more about planet
                         </button>
                       </Link>
