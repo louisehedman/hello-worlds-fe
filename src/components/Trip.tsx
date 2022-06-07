@@ -49,7 +49,7 @@ const Trip: React.FC<Props> = ({ trip }) => {
         }}
       >
         <img
-          src={planet?.image}
+          src={`/images/${planet?.name}.jpg`}
           className="card-img-top rounded"
           alt={planet?.name}
           style={{ width: "16rem" }}
