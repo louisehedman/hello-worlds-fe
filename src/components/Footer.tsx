@@ -61,18 +61,20 @@ export const Footer: React.FC = () => {
 
           <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
             <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+            <address>
             <p>
               <i className="fas fa-home mr-3"></i> Chas Academy, 126 30, SE
             </p>
             <p>
-              <i className="fas fa-envelope mr-3"></i> helloworlds2022@gmail.com
+              <i className="fas fa-envelope mr-3"></i> <a className="text-white text-decoration-none" href="mailto:helloworlds2022@gmail.com">helloworlds2022@gmail.com</a>
             </p>
             <p>
-              <i className="fas fa-phone mr-3"></i> +46 70 70 70 70
+              <i className="fas fa-phone mr-3"></i> <a className="text-white text-decoration-none" href="tel:+4670707070">+46 70 70 70 70</a>
             </p>
             <p>
               <i className="fas fa-print mr-3"></i> +01 000 100 27
             </p>
+            </address>
           </div>
         </div>
 
