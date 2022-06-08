@@ -12,7 +12,6 @@ export interface PlanetInterface {
   earthDistance: number | undefined;
   description: string | undefined;
   shortDescription: string | undefined;
-  image: string | undefined;
 }
 
 export interface TripInterface {

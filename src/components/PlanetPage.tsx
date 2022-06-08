@@ -20,7 +20,6 @@ export const PlanetPage = () => {
         earthDistance: res.data.planet.earthDistance,
         shortDescription: res.data.planet.shortDescription,
         description: res.data.planet.description,
-        image: res.data.planet.image,
         mass: res.data.planet.mass,
         grav: res.data.planet.grav,
         radius: res.data.planet.radius,
@@ -50,11 +49,11 @@ export const PlanetPage = () => {
           </div>
           <img
             className="mx-auto d-block img-fluid"
-            src={`${planet?.image}`}
+            src={`/images/${planet?.name}.jpg`}
             alt= {`Image of planet ${planet?.name}`}
             width="20px"
             style={{
-              width: "auto",
+              width: "250px",
               height: "250px",
             }}
           />

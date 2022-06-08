@@ -33,7 +33,6 @@ const Trip: React.FC<Props> = ({ trip }) => {
             earthDistance: data.planet.earthDistance,
             shortDescription: data.planet.shortDescription,
             description: data.planet.description,
-            image: data.planet.image,
           });
         });
     }
@@ -52,7 +51,7 @@ const Trip: React.FC<Props> = ({ trip }) => {
           src={`/images/${planet?.name}.jpg`}
           className="card-img-top rounded img-fluid"
           alt={planet?.name}
-          style={{ width: "16rem" }}
+          style={{ width: "250px", height: "250px" }}
         />
         <div className="card-body">
           <h3 className="card-title text-warning">{planet?.name}</h3>

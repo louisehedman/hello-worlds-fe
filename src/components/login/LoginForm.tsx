@@ -104,24 +104,28 @@ const LoginForm: React.FC = () => {
           <label className="text-reset">Email:</label>
           <input
             ref={emailRef}
-            className="form-control my-3"
+            className="form-control m-auto my-3"
+            style={{ border: '3px solid #FFC107', padding: '10px', width: '70%' }}
             type="email"
             name="email"
             value={credentials.email}
             onChange={handleChange}
+            placeholder="Email"
             required
           />
           <label className="text-reset">Password:</label>
           <input
             ref={pwdRef}
-            className="form-control my-3"
+            className="form-control m-auto my-3"
+            style={{ border: '3px solid #FFC107', padding: '10px', width: '70%' }}
             type="password"
             name="password"
             value={credentials.password}
             onChange={handleChange}
+            placeholder="Password"
             required
           />
-          <input className="btn btn-light" type="submit" value="Login" />
+          <input className="btn btn-success" type="submit" value="Login" />
         </div>
       </form>
     </div>
