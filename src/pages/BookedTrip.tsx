@@ -77,7 +77,7 @@ const BookedTrip: React.FC = () => {
           className="rounded img-fluid"
           src={`/images/${planet?.name}.jpg`}
           alt={planet?.name}
-          style={{ width: "20rem" }}
+          style={{ width: "250px", height: "250px" }}
         />
         <ul className="list-unstyled pb-3">
           <li className="fs-5 my-1">
