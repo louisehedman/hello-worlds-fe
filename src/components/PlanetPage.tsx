@@ -52,7 +52,7 @@ export const PlanetPage = () => {
             src={`/images/${planet?.name}.jpg`}
             width="20px"
             style={{
-              width: "auto",
+              width: "250px",
               height: "250px",
             }}
           />

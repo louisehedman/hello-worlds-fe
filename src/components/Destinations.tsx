@@ -200,7 +200,7 @@ const Destinations: React.FC = () => {
                     alt={"picture of " + planet.name}
                     width="10px"
                     style={{
-                      width: "auto",
+                      width: "250px",
                       height: "250px",
                     }}
                   />
