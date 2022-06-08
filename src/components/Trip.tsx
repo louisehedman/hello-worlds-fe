@@ -50,7 +50,7 @@ const Trip: React.FC<Props> = ({ trip }) => {
       >
         <img
           src={`/images/${planet?.name}.jpg`}
-          className="card-img-top rounded"
+          className="card-img-top rounded img-fluid"
           alt={planet?.name}
           style={{ width: "16rem" }}
         />
