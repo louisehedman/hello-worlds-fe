@@ -192,6 +192,7 @@ const Destinations: React.FC = () => {
           ) {
             return (
               <div className="card mt-2 bg-black rounded mb-4 border border-white bg-opacity-75 text-center text-white">
+                <ul>
                 <li className="mt-2" key={planet.id}>
                   <h3>{planet.name}</h3>
                   <img
@@ -213,6 +214,7 @@ const Destinations: React.FC = () => {
                     </button>
                   </Link>
                 </li>
+                </ul>
               </div>
             );
           } else return null;
