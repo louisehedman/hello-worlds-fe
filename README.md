@@ -1,6 +1,67 @@
-# Getting Started with Create React App
+# Hello World(s)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About this project
+
+This project is made by students at Chas Academy using MERN-stack. Users can book trips to different Planets. A visitor can read about different planets, but not be able to book. A user can register and create an account, and then login and logout. 
+
+Only logged in users can book trips. Also only logged in users can do CRUD and create its own lists. A user can filter planets according to its own preference such as: distance, temperature etc. And a user can search for a planet to read briefly about it and things to do on the Planet. 
+
+## 🚀Authors
+
+- Nova Boman [@NovaBoman](https://www.github.com/NovaBoman)
+- Sandra Wallén [@sandra-wallen](https://www.github.com/sandra-wallen)
+- Simon Miller [@simomill](https://www.github.com/simomill)
+- Louise Hedman [@louisehedman](https://www.github.com/louisehedman)
+- Paulina Eriksson [@paulinaeriksson](https://www.github.com/paulinaeriksson)
+- Onur Kayhan [@onurkayhann](https://www.github.com/onurkayhann)
+- Alisher Yuldashev [@baldazay](https://www.github.com/baldazay)
+- Simon Denito [@simden124](https://www.github.com/simden124)
+
+## Tech Stack
+**Client:** React, TypeScript, Bootstrap
+**Server:** Node, Express, Mongoose, MongoDB, Nodemon
+
+
+## Compitability
+- Laptop devices
+- Mobile devices
+
+## Project setup
+
+This project was created to work together with a [Node.JS, Express backend](https://github.com/louisehedman/hello-worlds-be).
+Instructions for how to set up the backend part of this project can be found in the backend repo.
+
+After cloning this repo navigate to the root folder in your terminal.
+
+### Environment Variables 
+
+To run this project, you will need to create a `.env`file and add the following environment variable.
+
+`REACT_APP_API_URL`
+
+### Run locally
+
+To start the server run ### `$ npm start`
+
+## Deployment
+
+[Visit the App](http://helloworldstraveling.netlify.app/)
+
+## Documentation
+[Project idea](https://docs.google.com/document/d/1AVMP5OK2YgBT46wpgyHdWCBFURYMoxQrOBpvsFkTcWw/edit)
+[Figma](https://www.figma.com/file/k3lHPDIIlkub15njOPA6ez/Hello-World(s)?node-id=0%3A1)
+[Distance and travel time to planets in km](https://docs.google.com/document/d/1_nzSHf9VF5jQHNZj9Hmg9MX6-erocGOc4tKCi8uWee4/edit)
+[General planet info](https://docs.google.com/document/d/1anX7E3fgoCfaRA1R6C05wGHyl_LD8MSEU-Xx3Q2dnew/edit#heading=h.2x0dpo8906gg)
+[Personas](https://docs.google.com/presentation/d/1V6UZIddNoCe0ouqjQf5iNsiiZzXwdz180Lqw-TXuuaw/edit#slide=id.g128f4834786_0_60)
+
+
+## Support
+
+For support, email helloworlds2022@gmail.com or join our Slack channel.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Available Scripts
 
@@ -13,6 +74,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
 
 ### `npm test`
 
@@ -44,3 +106,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
