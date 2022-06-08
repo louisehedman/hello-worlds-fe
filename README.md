@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # Hello World(s)
 
 ## About this project
@@ -30,11 +26,22 @@ Only logged in users can book trips. Also only logged in users can do CRUD and c
 - Laptop devices
 - Mobile devices
 
-## Environment Variables 
+## Project setup
 
-To run this project, you will need to add the following environment variables to your .env file
+This project was created to work together with a [Node.JS, Express backend](https://github.com/louisehedman/hello-worlds-be).
+Instructions for how to set up the backend part of this project can be found in the backend repo.
+
+After cloning this repo navigate to the root folder in your terminal.
+
+### Environment Variables 
+
+To run this project, you will need to create a `.env`file and add the following environment variable.
 
 `REACT_APP_API_URL`
+
+### Run locally
+
+To start the server run ### `$ npm start`
 
 ## Deployment
 
@@ -42,6 +49,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Documentation
 [Project idea](https://docs.google.com/document/d/1AVMP5OK2YgBT46wpgyHdWCBFURYMoxQrOBpvsFkTcWw/edit)
+[Figma](https://www.figma.com/file/k3lHPDIIlkub15njOPA6ez/Hello-World(s)?node-id=0%3A1)
 [Distance and travel time to planets in km](https://docs.google.com/document/d/1_nzSHf9VF5jQHNZj9Hmg9MX6-erocGOc4tKCi8uWee4/edit)
 [General planet info](https://docs.google.com/document/d/1anX7E3fgoCfaRA1R6C05wGHyl_LD8MSEU-Xx3Q2dnew/edit#heading=h.2x0dpo8906gg)
 [Personas](https://docs.google.com/presentation/d/1V6UZIddNoCe0ouqjQf5iNsiiZzXwdz180Lqw-TXuuaw/edit#slide=id.g128f4834786_0_60)
@@ -98,3 +106,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
