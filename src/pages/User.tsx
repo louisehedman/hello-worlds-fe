@@ -4,6 +4,7 @@ import TripList from "../components/TripList";
 import { API_URL } from "../reusable/urls";
 import { UserInterface } from "../interfaces/interfaces";
 import { AuthContext } from "../auth/AuthProvider";
+import axios from "axios";
 
 const User: React.FC = () => {
   const auth = useContext(AuthContext);
@@ -11,31 +12,36 @@ const User: React.FC = () => {
 
   const navigate = useNavigate();
 
+  const getUser = async () => {
+    try {
+      const res = await axios.get(API_URL("user"), {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      });
+      setUser({
+        _id: res.data.user._id,
+        firstName: res.data.user.firstName,
+        username: res.data.user.username,
+        email: res.data.user.email,
+        isAdmin: res.data.user.isAdmin,
+        tripList: res.data.user.tripList,
+      });
+    } catch (err: any) {
+      if (err.response.status === 403) {
+        auth?.handleLogout();
+        navigate("/login");
+      } else {
+        navigate("/");
+      }
+    }
+  };
+
   useEffect(() => {
     if (!auth?.auth()) {
       navigate("/");
     }
-
-    fetch(API_URL("user"), {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          setUser({
-            _id: data.user._id,
-            firstName: data.user.firstName,
-            username: data.user.username,
-            email: data.user.email,
-            isAdmin: data.user.isAdmin,
-            tripList: data.user.tripList,
-          });
-        }
-      });
+    getUser();
   }, []);
 
   return (
