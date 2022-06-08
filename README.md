@@ -31,7 +31,7 @@ Only logged in users can book trips. Also only logged in users can do CRUD and c
 This project was created to work together with a [Node.JS, Express backend](https://github.com/louisehedman/hello-worlds-be).
 Instructions for how to set up the backend part of this project can be found in the backend repo.
 
-After cloning this repo navigate to the root folder in your terminal.
+After cloning this repo navigate to the root folder in your terminal and run **npm install** to install dependencies.
 
 ### Environment Variables 
 
@@ -48,11 +48,11 @@ To start the server run ### `$ npm start`
 [Visit the App](http://helloworldstraveling.netlify.app/)
 
 ## Documentation
-[Project idea](https://docs.google.com/document/d/1AVMP5OK2YgBT46wpgyHdWCBFURYMoxQrOBpvsFkTcWw/edit)
-[Figma](https://www.figma.com/file/k3lHPDIIlkub15njOPA6ez/Hello-World(s)?node-id=0%3A1)
-[Distance and travel time to planets in km](https://docs.google.com/document/d/1_nzSHf9VF5jQHNZj9Hmg9MX6-erocGOc4tKCi8uWee4/edit)
-[General planet info](https://docs.google.com/document/d/1anX7E3fgoCfaRA1R6C05wGHyl_LD8MSEU-Xx3Q2dnew/edit#heading=h.2x0dpo8906gg)
-[Personas](https://docs.google.com/presentation/d/1V6UZIddNoCe0ouqjQf5iNsiiZzXwdz180Lqw-TXuuaw/edit#slide=id.g128f4834786_0_60)
+- [Project idea](https://docs.google.com/document/d/1AVMP5OK2YgBT46wpgyHdWCBFURYMoxQrOBpvsFkTcWw/edit)
+- [Figma](https://www.figma.com/file/k3lHPDIIlkub15njOPA6ez/Hello-World(s)?node-id=0%3A1)
+- [Distance and travel time to planets in km](https://docs.google.com/document/d/1_nzSHf9VF5jQHNZj9Hmg9MX6-erocGOc4tKCi8uWee4/edit)
+- [General planet info](https://docs.google.com/document/d/1anX7E3fgoCfaRA1R6C05wGHyl_LD8MSEU-Xx3Q2dnew/edit#heading=h.2x0dpo8906gg)
+- [Personas](https://docs.google.com/presentation/d/1V6UZIddNoCe0ouqjQf5iNsiiZzXwdz180Lqw-TXuuaw/edit#slide=id.g128f4834786_0_60)
 
 
 ## Support
