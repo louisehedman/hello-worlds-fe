@@ -4,6 +4,7 @@ import axios from "axios";
 import { Range, getTrackBackground } from "react-range";
 import { API_URL } from "../reusable/urls";
 import { Link } from "react-router-dom";
+import toCelsius from "../helpers/KelvinConverter";
 
 const Destinations: React.FC = () => {
   const tempStep = 1;
@@ -101,10 +102,10 @@ const Destinations: React.FC = () => {
             )}
           />
           <output style={{ marginBottom: "30px", float: "left" }}>
-            {tempValues[0] + " °K"}
+            {toCelsius(tempValues[0]) + " °C"}
           </output>
           <output style={{ marginBottom: "30px", float: "right" }}>
-            {tempValues[1] + " °K"}
+            {toCelsius(tempValues[1]) + " °C"}
           </output>
           <h3 className="card-subtitle mt-4 mb-3">Distance from Earth</h3>
           <Range
@@ -195,7 +196,7 @@ const Destinations: React.FC = () => {
                   <h3>{planet.name}</h3>
                   <img
                     className="img-fluid"
-                    src={planet.image}
+                    src={`/images/${planet.name}.jpg`}
                     alt={"picture of " + planet.name}
                     width="10px"
                     style={{
@@ -204,7 +205,7 @@ const Destinations: React.FC = () => {
                     }}
                   />
                   <p className="w-75 m-auto">{planet.shortDescription}</p>
-                  <p className="mt-3">Temperature: {planet.avgTemp}°K</p>
+                  <p className="mt-3">Temperature: {toCelsius(planet.avgTemp)} °C</p>
                   <p>Distance: {planet.earthDistance} km</p>
                   <Link to={"/planet/" + planet.name}>
                     <button className="p-1 mx-1 my-3 btn btn-success">

@@ -4,7 +4,11 @@ import { AuthContext } from "../auth/AuthProvider";
 import LoginForm from "../components/login/LoginForm";
 import RegisterForm from "../components/login/RegisterForm";
 
-const Login: React.FC = () => {
+interface Props {
+  color: string;
+}
+
+const Login: React.FC<Props> = ({ color }) => {
   const auth = useContext(AuthContext);
   const [hasAccount, setHasAccount] = useState(true);
   const toggleForm = () => {
@@ -20,7 +24,7 @@ const Login: React.FC = () => {
   });
 
   return (
-    <div className="container w-50 text-center text-white">
+    <div className={`container w-50 text-center ${color}`}>
       {hasAccount ? <LoginForm /> : <RegisterForm />}
 
       <p className="d-inline">

@@ -87,10 +87,10 @@ const LoginForm: React.FC = () => {
 
   return (
     <div className="my-5">
-      <h2 className="text-white text-center">Sign in</h2>
+      <h2 className="text-reset text-center">Sign in</h2>
       <p
         ref={messageRef}
-        className="text-white text-center"
+        className="text-reset text-center"
         style={!message ? { visibility: "hidden" } : { visibility: "visible" }}
       >
         {message}
@@ -101,7 +101,7 @@ const LoginForm: React.FC = () => {
         onSubmit={(e) => handleSubmit(e, API_URL("login"))}
       >
         <div className="form-group">
-          <label className="text-white">Email:</label>
+          <label className="text-reset">Email:</label>
           <input
             ref={emailRef}
             className="form-control my-3"
@@ -111,7 +111,7 @@ const LoginForm: React.FC = () => {
             onChange={handleChange}
             required
           />
-          <label className="text-white">Password:</label>
+          <label className="text-reset">Password:</label>
           <input
             ref={pwdRef}
             className="form-control my-3"
