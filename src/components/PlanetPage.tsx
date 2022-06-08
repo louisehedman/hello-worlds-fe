@@ -20,7 +20,6 @@ export const PlanetPage = () => {
         earthDistance: res.data.planet.earthDistance,
         shortDescription: res.data.planet.shortDescription,
         description: res.data.planet.description,
-        image: res.data.planet.image,
         mass: res.data.planet.mass,
         grav: res.data.planet.grav,
         radius: res.data.planet.radius,
