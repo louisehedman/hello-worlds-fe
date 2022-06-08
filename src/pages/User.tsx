@@ -14,7 +14,11 @@ const User: React.FC = () => {
 
   const getUser = async () => {
     try {
-      const res = await axios.get(API_URL("user"));
+      const res = await axios.get(API_URL("user"), {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      });
       setUser({
         _id: res.data.user._id,
         firstName: res.data.user.firstName,
