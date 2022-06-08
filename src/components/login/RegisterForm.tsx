@@ -100,7 +100,7 @@ const RegisterForm: React.FC = () => {
             name="firstName"
             value={credentials.firstName}
             onChange={handleChange}
-            placeholder="First name here"
+            placeholder="First name"
             required
           />
           <label className="text-reset">Username:</label>
@@ -111,7 +111,7 @@ const RegisterForm: React.FC = () => {
             name="username"
             value={credentials.username}
             onChange={handleChange}
-            placeholder="Username here"
+            placeholder="Username"
             required
           />
           <label className="text-reset">Email:</label>
@@ -123,7 +123,7 @@ const RegisterForm: React.FC = () => {
             name="email"
             value={credentials.email}
             onChange={handleChange}
-            placeholder="Email here"
+            placeholder="Email"
             required
           />
           <label className="text-reset">Password:</label>
@@ -135,7 +135,7 @@ const RegisterForm: React.FC = () => {
             name="password"
             value={credentials.password}
             onChange={handleChange}
-            placeholder="Password here"
+            placeholder="Password"
             required
           />
           <input className="btn btn-success" type="submit" value="Register" />
