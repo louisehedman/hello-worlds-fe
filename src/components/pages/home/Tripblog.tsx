@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Pagination } from "./pagination";
 import { Link } from "react-router-dom";
-import { API_URL } from "../../reusable/urls";
+import { API_URL } from "../../../helpers/urls";
 
 function TripBlog() {
   const [blogs, setBlogs] = useState([]);

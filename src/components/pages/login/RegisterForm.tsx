@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { UserDetailsInterface } from "../../interfaces/interfaces";
-import { API_URL } from "../../reusable/urls";
+import { UserDetailsInterface } from "../../../interfaces/interfaces";
+import { API_URL } from "../../../helpers/urls";
 
 const RegisterForm: React.FC = () => {
   // References to input elements

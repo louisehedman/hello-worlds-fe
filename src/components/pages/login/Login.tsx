@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../auth/AuthProvider";
-import LoginForm from "../components/login/LoginForm";
-import RegisterForm from "../components/login/RegisterForm";
+import { AuthContext } from "../../../auth/AuthProvider";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 
 interface Props {
   color: string;

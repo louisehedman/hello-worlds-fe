@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import { TripInterface } from "../interfaces/interfaces";
-import { API_URL } from "../reusable/urls";
+import { TripInterface } from "../../../interfaces/interfaces";
+import { API_URL } from "../../../helpers/urls";
 import { Props } from "./SuperAwesomeButton";
 
 const BookingForm: React.FC<Props> = ({
