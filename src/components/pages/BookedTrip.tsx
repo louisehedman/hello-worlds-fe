@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import { PlanetInterface, TripInterface } from "../../interfaces/Interfaces";
-import { API_URL, GET_TRIP, GET_PLANET } from "../../helpers/Urls";
+import { API_URL, GET_TRIP, GET_PLANET } from "../../helpers/urls";
 import { AuthContext } from "../../auth/AuthProvider";
 import toCelsius from "../../helpers/KelvinConverter";
 

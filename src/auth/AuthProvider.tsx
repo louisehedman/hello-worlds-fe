@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { API_URL } from "../../helpers/Urls";
+import { API_URL } from "../helpers/urls";
 
 
 // Context interface

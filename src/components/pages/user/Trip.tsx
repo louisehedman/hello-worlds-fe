@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { API_URL, GET_PLANET } from "../../../helpers/Urls";
+import { API_URL, GET_PLANET } from "../../../helpers/urls";
 import { TripInterface, PlanetInterface } from "../../../interfaces/Interfaces";
 
 interface Props {

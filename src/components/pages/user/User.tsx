@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TripList from "./TripList";
-import { API_URL } from "../../../helpers/Urls";
+import { API_URL } from "../../../helpers/urls";
 import { UserInterface } from "../../../interfaces/Interfaces";
 import { AuthContext } from "../../../auth/AuthProvider";
 import axios from "axios";

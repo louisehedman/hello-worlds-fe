@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../../auth/AuthProvider";
 import { UserDetailsInterface } from "../../../interfaces/Interfaces";
-import { API_URL } from "../../../helpers/Urls";
+import { API_URL } from "../../../helpers/urls";
 
 const LoginForm: React.FC = () => {
   // Use the variables and functions from the AuthContext

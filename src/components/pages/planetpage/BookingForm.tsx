@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { TripInterface } from "../../../interfaces/Interfaces";
-import { API_URL } from "../../../helpers/Urls";
+import { API_URL } from "../../../helpers/urls";
 import { Props } from "./SuperAwesomeButton";
 
 const BookingForm: React.FC<Props> = ({

@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Range, getTrackBackground } from "react-range";
-import { API_URL } from "../../helpers/Urls"
+import { API_URL } from "../../helpers/urls"
 import { Link } from "react-router-dom";
 import toCelsius from "../../helpers/KelvinConverter";
 
