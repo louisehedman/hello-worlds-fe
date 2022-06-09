@@ -79,13 +79,13 @@ const BookedTrip: React.FC = () => {
         />
         <ul className="list-unstyled pb-3">
           <li className="fs-5 my-1">
-            Number of moons:{" "}
+            Number of moons: {" "}
             <span className="fw-semibold">
               {planet?.moons === null ? 0 : planet?.moons?.length}
             </span>
           </li>
           <li className="fs-5 my-1">
-            Average Temperature:{" "}
+            Average Temperature: {" "}
             <span className="fw-semibold">{toCelsius(planet?.avgTemp)} °C</span>
           </li>
           <li className="fs-5 my-1">
@@ -98,7 +98,7 @@ const BookedTrip: React.FC = () => {
             Radius: <span className="fw-semibold">{planet?.radius}</span>
           </li>
           <li className="fs-5 my-1">
-            Distance to earth:{" "}
+            Distance to earth: {" "}
             <span className="fw-semibold">{planet?.earthDistance} km</span>
           </li>
           <li className="fs-5 my-1">{planet?.shortDescription}</li>
@@ -108,21 +108,21 @@ const BookedTrip: React.FC = () => {
         <h2 className="text-warning pt-2">Booking specs</h2>
         <ul className="list-unstyled pb-3">
           <li className="fs-5 my-1">
-            Class:{" "}
+            Class: {" "}
             <span className="fw-semibold">
               {trip?.firstClass ? "First class" : "Economy"}
             </span>
           </li>
           <li className="fs-5 my-1">
-            Number of passengers:{" "}
+            Number of passengers: {" "}
             <span className="fw-semibold">{trip?.passengers}</span>
           </li>
           <li className="fs-5 my-1">
-            Seating preference:{" "}
+            Seating preference: {" "}
             <span className="fw-semibold">{trip?.seat}</span>
           </li>
           <li className="fs-5 my-1">
-            Travel time:{" "}
+            Travel time: {" "}
             <span className="fw-semibold">{trip?.travTime} days</span>
           </li>
         </ul>
