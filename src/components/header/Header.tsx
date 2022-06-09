@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark relative-top m-0 bg-opacity-75">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src="/logo001.png" alt="" />
+          <img className="img-fluid" src="/logo001.png" alt="Hello World(s) logo" />
         </Link>
         <button
           className="navbar-toggler"

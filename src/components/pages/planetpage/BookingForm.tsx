@@ -67,7 +67,7 @@ const BookingForm: React.FC<Props> = ({
   return (
     <>
       <form
-        className="w-90 m-auto"
+        className="w-90 m-auto text-black"
         onSubmit={(e) => handleSubmit(e, API_URL("create-trip"))}
       >
         <div className="form-group">
@@ -118,7 +118,7 @@ const BookingForm: React.FC<Props> = ({
             />
           </div>
           <div className="form-group  my-4">
-            <label className="d-block">Seating preference:</label>
+            <label className="d-block text-black">Seating preference:</label>
             <label htmlFor="window">Window</label>
             <input
               className="ms-2 me-4"

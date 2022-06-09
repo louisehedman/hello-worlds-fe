@@ -94,43 +94,51 @@ const RegisterForm: React.FC = () => {
           <label className="text-reset">First name:</label>
           <input
             ref={firstNameRef}
-            className="form-control my-3"
+            className="form-control m-auto my-3"
+            style={{ border: '3px solid #FFC107', padding: '10px', width: '70%' }}
             type="text"
             name="firstName"
             value={credentials.firstName}
             onChange={handleChange}
+            placeholder="First name"
             required
           />
           <label className="text-reset">Username:</label>
           <input
-            className="form-control my-3"
+            className="form-control m-auto my-3"
+            style={{ border: '3px solid #FFC107', padding: '10px', width: '70%' }}
             type="text"
             name="username"
             value={credentials.username}
             onChange={handleChange}
+            placeholder="Username"
             required
           />
           <label className="text-reset">Email:</label>
           <input
             ref={emailRef}
-            className="form-control my-3"
+            className="form-control m-auto my-3"
+            style={{ border: '3px solid #FFC107', padding: '10px', width: '70%' }}
             type="email"
             name="email"
             value={credentials.email}
             onChange={handleChange}
+            placeholder="Email"
             required
           />
           <label className="text-reset">Password:</label>
           <input
             ref={pwdRef}
-            className="form-control my-3"
+            className="form-control m-auto my-3"
+            style={{ border: '3px solid #FFC107', padding: '10px', width: '70%' }}
             type="password"
             name="password"
             value={credentials.password}
             onChange={handleChange}
+            placeholder="Password"
             required
           />
-          <input className="btn btn-light" type="submit" value="Register" />
+          <input className="btn btn-success" type="submit" value="Register" />
         </div>
       </form>
     </div>

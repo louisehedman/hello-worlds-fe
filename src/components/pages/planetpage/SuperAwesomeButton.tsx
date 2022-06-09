@@ -62,12 +62,12 @@ const SuperAwesomeButton: React.FC<Props> = ({
                     setApplicationSent={setApplicationSent}
                   />
                 ) : (
-                  <p>Congrats! Space awaits!</p>
+                  <p className="text-black">Congrats! Space awaits!</p>
                 )
               ) : (
                 <>
-                  <p>Something went wrong!</p>
-                  <p>Please contact support.</p>
+                  <p className="text-black">Something went wrong!</p>
+                  <p className="text-black">Please contact support.</p>
                 </>
               )}
             </div>

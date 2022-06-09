@@ -34,7 +34,7 @@ const Login: React.FC<Props> = ({ color }) => {
         className="btn btn-link d-inline align-baseline"
         onClick={toggleForm}
       >
-        {hasAccount ? "Register here" : "Login here"}
+        {hasAccount ? <button type="button" className="btn btn-warning">Register here</button> : <button type="button" className="btn btn-warning">Login here</button>}
       </button>
     </div>
   );

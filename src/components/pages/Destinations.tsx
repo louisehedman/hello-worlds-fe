@@ -183,7 +183,6 @@ const Destinations: React.FC = () => {
       <h2 className="my-3 text-center text-warning">Matching Planets</h2>
       <ul className="list-unstyled">
         {planets.map((planet: any) => {
-          console.log(planet.avgTemp);
           if (
             planet.avgTemp >= tempValues[0] &&
             planet.avgTemp <= tempValues[1] &&
@@ -191,8 +190,8 @@ const Destinations: React.FC = () => {
             planet.earthDistance <= distanceValues[1]
           ) {
             return (
-              <div className="card mt-2 bg-black rounded mb-4 border border-white bg-opacity-75 text-center text-white">
-                <li className="mt-2" key={planet.id}>
+              <div key={planet._id} className="card mt-2 bg-black rounded mb-4 border border-white bg-opacity-75 text-center text-white">
+                <li className="mt-2" >
                   <h3>{planet.name}</h3>
                   <img
                     className="img-fluid"
@@ -200,7 +199,7 @@ const Destinations: React.FC = () => {
                     alt={"picture of " + planet.name}
                     width="10px"
                     style={{
-                      width: "auto",
+                      width: "250px",
                       height: "250px",
                     }}
                   />
