@@ -55,7 +55,6 @@ function TripBlog() {
               <p>{blog.date}</p>
                 <h3>{blog.title}</h3>
                 <p>{getExcerpt(blog.body)}</p>
-                {/* <p>{blog.body}</p> */}
                 <Link
                   className="text-white hover:text-blue"
                   to={`/blogs/${blog._id}`}
