@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../../auth/AuthProvider";
-import { UserDetailsInterface } from "../../../interfaces/Interfaces";
+import { UserDetailsInterface } from "../../../interfaces/interfaces";
 import { API_URL } from "../../../helpers/urls";
 
 const LoginForm: React.FC = () => {

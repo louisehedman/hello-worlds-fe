@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { PlanetInterface } from "../../../interfaces/Interfaces";
+import { PlanetInterface } from "../../../interfaces/interfaces";
 import { API_URL } from "../../../helpers/urls";
 import SuperAwesomeButton from "./SuperAwesomeButton";
 import toCelsius from "../../../helpers/KelvinConverter";
