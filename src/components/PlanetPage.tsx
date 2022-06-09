@@ -50,6 +50,7 @@ export const PlanetPage = () => {
           <img
             className="mx-auto d-block img-fluid"
             src={`/images/${planet?.name}.jpg`}
+            alt= {`Image of planet ${planet?.name}`}
             width="20px"
             style={{
               width: "250px",
