@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { API_URL } from "../reusable/urls";
+import { API_URL } from "../helpers/urls";
+
 
 // Context interface
 interface AuthContextInterface {

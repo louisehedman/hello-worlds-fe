@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Pagination } from "./pagination";
 import { Link } from "react-router-dom";
-import { API_URL } from "../../reusable/urls";
+import { Pagination } from "./pagination";
+import { API_URL } from "../../../helpers/urls"
 
 function TripBlog() {
   const [blogs, setBlogs] = useState([]);
@@ -55,7 +55,6 @@ function TripBlog() {
               <p>{blog.date}</p>
                 <h3>{blog.title}</h3>
                 <p>{getExcerpt(blog.body)}</p>
-                {/* <p>{blog.body}</p> */}
                 <Link
                   className="text-white hover:text-blue"
                   to={`/blogs/${blog._id}`}

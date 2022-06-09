@@ -8,14 +8,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import App from "./App";
-import Login from "./pages/Login";
-import Home from "./components/home/Home";
-import About from "./components/about/About";
-import User from "./pages/User";
-import BookedTrip from "./pages/BookedTrip";
-import { PlanetPage } from "./components/PlanetPage";
-import BlogPage from "./pages/blogpage";
-import Destinations from "./components/Destinations";
+import Login from "./components/pages/login/Login";
+import Home from "./components/pages/home/Home";
+import About from "./components/pages/about/About";
+import User from "./components/pages/user/User";
+import BookedTrip from "./components/pages/BookedTrip";
+import { PlanetPage } from "./components/pages/planetpage/PlanetPage";
+import BlogPage from "./components/pages/blogpage";
+import Destinations from "./components/pages/Destinations";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

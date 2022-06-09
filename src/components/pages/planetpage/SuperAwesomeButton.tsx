@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../auth/AuthProvider";
-import Login from "../pages/Login";
+import { AuthContext } from "../../../auth/AuthProvider";
+import Login from "../login/Login";
 import BookingForm from "./BookingForm";
 
 export interface Props {

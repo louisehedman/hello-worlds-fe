@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { API_URL, GET_PLANET } from "../reusable/urls";
-import { TripInterface, PlanetInterface } from "../interfaces/interfaces";
+import { API_URL, GET_PLANET } from "../../../helpers/urls";
+import { TripInterface, PlanetInterface } from "../../../interfaces/interfaces";
 
 interface Props {
   trip: TripInterface;
@@ -36,7 +36,7 @@ const Trip: React.FC<Props> = ({ trip }) => {
           });
         });
     }
-  }, []);
+  }, [trip]);
 
   return (
     <Link to={`/booked-trip/${trip?._id}`}>

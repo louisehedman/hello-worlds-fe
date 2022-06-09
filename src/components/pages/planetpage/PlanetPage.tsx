@@ -1,37 +1,40 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { PlanetInterface } from "../interfaces/interfaces";
-import { API_URL } from "../reusable/urls";
+import { PlanetInterface } from "../../../interfaces/interfaces";
+import { API_URL } from "../../../helpers/urls";
 import SuperAwesomeButton from "./SuperAwesomeButton";
-import toCelsius from "../helpers/KelvinConverter";
+import toCelsius from "../../../helpers/KelvinConverter";
 
 export const PlanetPage = () => {
   const [planet, setPlanet] = useState<PlanetInterface>();
   let { slug } = useParams();
 
-  const getPlanet = async () => {
-    await axios.get(API_URL(`planets/${slug}`)).then((res) => {
-      setPlanet({
-        _id: res.data.planet._id,
-        name: res.data.planet.name,
-        moons: res.data.planet.moons,
-        avgTemp: res.data.planet.avgTemp,
-        earthDistance: res.data.planet.earthDistance,
-        shortDescription: res.data.planet.shortDescription,
-        description: res.data.planet.description,
-        mass: res.data.planet.mass,
-        grav: res.data.planet.grav,
-        radius: res.data.planet.radius,
-      });
-    });
-  };
+
+  
 
   const numberWithSpaces = (nr: number | undefined) => {
     return nr?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   };
 
   useEffect(() => {
+    const getPlanet = async () => {
+      await axios.get(API_URL(`planets/${slug}`)).then((res) => {
+        setPlanet({
+          _id: res.data.planet._id,
+          name: res.data.planet.name,
+          moons: res.data.planet.moons,
+          avgTemp: res.data.planet.avgTemp,
+          earthDistance: res.data.planet.earthDistance,
+          shortDescription: res.data.planet.shortDescription,
+          description: res.data.planet.description,
+          mass: res.data.planet.mass,
+          grav: res.data.planet.grav,
+          radius: res.data.planet.radius,
+        });
+      });
+    };
+
     getPlanet();
   }, [slug]);
 
@@ -50,7 +53,7 @@ export const PlanetPage = () => {
           <img
             className="mx-auto d-block img-fluid"
             src={`/images/${planet?.name}.jpg`}
-            alt= {`Image of planet ${planet?.name}`}
+            alt= {`${planet?.name}`}
             width="20px"
             style={{
               width: "250px",
