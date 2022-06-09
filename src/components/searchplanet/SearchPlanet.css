@@ -8,19 +8,21 @@
   z-index: 1;
   top: 20px;
   right: 170px;
-  background-color: #d4c899;
+  /* background-color: #d4c899; */
+  background-color: #2B2D2F;
 }
 
 .planetContainer {
-  opacity: 0.65;
+  opacity: 0.85;
   float: right;
   width: 45%;
   z-index: 1;
 }
 
 .searchedPlanet {
+  color: #fff;
   margin-top: 25px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #fff;
 }
 
 @media only screen and (max-width: 768px) {
