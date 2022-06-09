@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { API_URL } from "../../helpers/urls";
+import { API_URL } from "../../helpers/Urls";
 import { Link } from "react-router-dom";
 import "./SearchPlanet.css";
 

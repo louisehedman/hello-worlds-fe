@@ -3,8 +3,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import { PlanetInterface, TripInterface } from "../../interfaces/interfaces";
-import { API_URL, GET_TRIP, GET_PLANET } from "../../helpers/urls";
+import { PlanetInterface, TripInterface } from "../../interfaces/Interfaces";
+import { API_URL, GET_TRIP, GET_PLANET } from "../../helpers/Urls";
 import { AuthContext } from "../../auth/AuthProvider";
 import toCelsius from "../../helpers/KelvinConverter";
 
@@ -57,7 +57,6 @@ const BookedTrip: React.FC = () => {
         earthDistance: data.planet.earthDistance,
         shortDescription: data.planet.shortDescription,
         description: data.planet.description,
-        image: data.planet.image
       });
     });
   };

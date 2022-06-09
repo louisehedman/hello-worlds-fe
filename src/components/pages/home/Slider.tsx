@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 import "./Slider.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { API_URL } from "../../../helpers/urls";
+import { API_URL } from "../../../helpers/Urls";
 import toCelsius from "../../../helpers/KelvinConverter";
 
 // AUTH, USERID AND ADDPLANET() ARE ONLY TEMPORARY

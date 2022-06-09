@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TripInterface } from "../../../interfaces/interfaces";
+import { TripInterface } from "../../../interfaces/Interfaces";
 import Trip from "./Trip";
 
 interface Props {

@@ -2,8 +2,8 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../../auth/AuthProvider";
-import { UserDetailsInterface } from "../../../interfaces/interfaces";
-import { API_URL } from "../../../helpers/urls";
+import { UserDetailsInterface } from "../../../interfaces/Interfaces";
+import { API_URL } from "../../../helpers/Urls";
 
 const LoginForm: React.FC = () => {
   // Use the variables and functions from the AuthContext
