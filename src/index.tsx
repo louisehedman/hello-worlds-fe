@@ -14,7 +14,7 @@ import About from "./components/pages/about/About";
 import User from "./components/pages/user/User";
 import BookedTrip from "./components/pages/BookedTrip";
 import { PlanetPage } from "./components/pages/planetpage/PlanetPage";
-import BlogPage from "./components/pages/BlogPage";
+import BlogPage from "./components/pages/blogpage";
 import Destinations from "./components/pages/Destinations";
 
 const root = ReactDOM.createRoot(

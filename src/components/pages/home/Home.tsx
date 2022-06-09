@@ -1,5 +1,5 @@
 import PlanetSlider from "./Slider";
-import TripBlog from "./TripBlog";
+import TripBlog from "./Tripblog";
 const Home: React.FC = () => {
 
   return (
