@@ -21,9 +21,15 @@ const BookingForm: React.FC<Props> = ({
   useEffect(() => {
     setState({
       ...state,
+
+      // Travel time is calculated in days.
+      // Distance to earth(km) divided by average space shuttle speed(km) divided by 24 hours.
+      // Source https://www.nasa.gov/centers/kennedy/about/information/shuttle_faq.html
+
       travTime: distanceToEarth
-        ? Math.floor(distanceToEarth / 28000)
+        ? Math.floor(distanceToEarth / 28000 / 24)
         : undefined,
+
       destination: destination,
     });
   }, []);

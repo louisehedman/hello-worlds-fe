@@ -8,12 +8,9 @@ import { API_URL, GET_TRIP, GET_PLANET } from "../reusable/urls";
 import { AuthContext } from "../auth/AuthProvider";
 import toCelsius from "../helpers/KelvinConverter";
 
-
 const BookedTrip: React.FC = () => {
   const auth = useContext(AuthContext);
   const { tripId } = useParams();
-
-  // const { userId, setUserId } = useContext();
 
   const [trip, setTrip] = useState<TripInterface>();
   const [planet, setPlanet] = useState<PlanetInterface>();
@@ -69,7 +66,9 @@ const BookedTrip: React.FC = () => {
       <div className="float-end h3">
         <Link to={auth?.signedIn ? `/user` : "/"}>Back to user page</Link>
       </div>
-      <h1 className="text-center text-white mt-5 mb-3">Trip to {planet?.name}</h1>
+      <h1 className="text-center text-white mt-5 mb-3">
+        Trip to {planet?.name}
+      </h1>
       <section className="container-sm rounded text-center bg-black bg-opacity-75 text-white">
         <h2 className="text-warning pt-2">{planet?.name} specs</h2>
         <img
