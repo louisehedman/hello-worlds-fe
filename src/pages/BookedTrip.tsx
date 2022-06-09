@@ -8,12 +8,9 @@ import { API_URL, GET_TRIP, GET_PLANET } from "../reusable/urls";
 import { AuthContext } from "../auth/AuthProvider";
 import toCelsius from "../helpers/KelvinConverter";
 
-
 const BookedTrip: React.FC = () => {
   const auth = useContext(AuthContext);
   const { tripId } = useParams();
-
-  // const { userId, setUserId } = useContext();
 
   const [trip, setTrip] = useState<TripInterface>();
   const [planet, setPlanet] = useState<PlanetInterface>();
@@ -69,7 +66,9 @@ const BookedTrip: React.FC = () => {
       <div className="float-end h3">
         <Link to={auth?.signedIn ? `/user` : "/"}>Back to user page</Link>
       </div>
-      <h1 className="text-center text-white mt-5 mb-3">Trip to {planet?.name}</h1>
+      <h1 className="text-center text-white mt-5 mb-3">
+        Trip to {planet?.name}
+      </h1>
       <section className="container-sm rounded text-center bg-black bg-opacity-75 text-white">
         <h2 className="text-warning pt-2">{planet?.name} specs</h2>
         <img
@@ -80,13 +79,13 @@ const BookedTrip: React.FC = () => {
         />
         <ul className="list-unstyled pb-3">
           <li className="fs-5 my-1">
-            Number of moons: {" "}
+            Number of moons:{" "}
             <span className="fw-semibold">
               {planet?.moons === null ? 0 : planet?.moons?.length}
             </span>
           </li>
           <li className="fs-5 my-1">
-            Average Temperature: {" "}
+            Average Temperature:{" "}
             <span className="fw-semibold">{toCelsius(planet?.avgTemp)} °C</span>
           </li>
           <li className="fs-5 my-1">
@@ -99,7 +98,7 @@ const BookedTrip: React.FC = () => {
             Radius: <span className="fw-semibold">{planet?.radius}</span>
           </li>
           <li className="fs-5 my-1">
-            Distance to earth: {" "}
+            Distance to earth:{" "}
             <span className="fw-semibold">{planet?.earthDistance} km</span>
           </li>
           <li className="fs-5 my-1">{planet?.shortDescription}</li>
@@ -109,21 +108,21 @@ const BookedTrip: React.FC = () => {
         <h2 className="text-warning pt-2">Booking specs</h2>
         <ul className="list-unstyled pb-3">
           <li className="fs-5 my-1">
-            Class: {" "}
+            Class:{" "}
             <span className="fw-semibold">
               {trip?.firstClass ? "First class" : "Economy"}
             </span>
           </li>
           <li className="fs-5 my-1">
-            Number of passengers: {" "}
+            Number of passengers:{" "}
             <span className="fw-semibold">{trip?.passengers}</span>
           </li>
           <li className="fs-5 my-1">
-            Seating preference: {" "}
+            Seating preference:{" "}
             <span className="fw-semibold">{trip?.seat}</span>
           </li>
           <li className="fs-5 my-1">
-            Travel time: {" "}
+            Travel time:{" "}
             <span className="fw-semibold">{trip?.travTime} days</span>
           </li>
         </ul>
